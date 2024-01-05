@@ -1,0 +1,122 @@
+@import '../../../assets/base.scss';
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: $dark-shade-gray;
+    color: $gray-200;
+    z-index: 99;
+    position: sticky;
+    top: 0;
+
+    .container-fluid {
+        flex-wrap: nowrap;
+        @media screen and (max-width: 991px){
+            flex-direction: column;
+        }
+    }
+}
+.nav-bar {
+    width: 100%;
+    background-color: $dark-shade-gray;
+    color: $gray-200;
+
+    &--tablet {
+        @media screen and (max-width: 991px){
+            width: 100%;
+            align-items: center;
+        }
+    }
+
+    &__banner-img img {
+        max-width: pxToRem(32px);
+        width: 100%;
+    }
+
+    &__search {
+        display: none !important;
+        max-width: pxToRem(400px);
+        width: 100%;
+
+        &--desktop {
+            @media screen and (min-width: 992px){
+                display: flex !important;
+            }
+        }
+
+        &--tablet {
+            @media screen and (max-width: 991px){
+                display: flex !important;
+            }
+        }
+    }
+
+    &__container {
+        gap: pxToRem(12px);
+        transition: none !important;
+
+        @media screen and (max-width: 991px){
+            width: 100%;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        padding-left: pxToRem(4px);
+    }
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: $gray-200;
+
+    &:hover {
+        color: $gray-200;
+    }
+
+    &.active {
+        color: $gray-200 !important;
+    }
+
+    &__cart-count {
+        position: absolute;
+        top: pxToRem(-6px);
+        left: pxToRem(14px);
+        font-size: 10px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: pxToRem(14px);
+        height: pxToRem(14px);
+        padding: pxToRem(7px);
+        border-radius: 50%;
+        background: $red;
+
+        @media screen and (max-width: 991px){
+            position: static;
+            width: pxToRem(16px);
+            height: pxToRem(16px);
+            font-size: 12px;
+            margin-right: 4px;
+        }
+    }
+}
+
+.navbar-toggler {
+    border: 0;
+
+    &:focus,
+    &:focus-visible {
+        border: 1px solid $gray-200;
+        outline: 0;
+        box-shadow: none;
+    }
+
+    .fa.fa-bars {
+        color: $gray-200;
+    }
+}
