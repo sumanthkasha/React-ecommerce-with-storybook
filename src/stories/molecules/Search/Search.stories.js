@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const LoggedIn = {
+export const SearchCmp = {
   args: {
     placeholder: "Search"
   },

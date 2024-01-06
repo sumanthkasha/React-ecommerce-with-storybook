@@ -3,10 +3,8 @@ import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
 import { Button } from "../../atoms/Button/Button";
-import { BsSearch } from "react-icons/bs";
-import { FaHeart } from "react-icons/fa";
-import { FaShoppingCart } from "react-icons/fa";
-import { FaBars } from "react-icons/fa";
+import { Search } from "../../molecules/Search/Search";
+import { FaHeart, FaShoppingCart, FaBars } from "react-icons/fa";
 
 import BannerImg from "../../../assets/images/TA_logo.svg";
 
@@ -22,13 +20,10 @@ export const Header = () => (
                             <img src={BannerImg} alt="Banner" />
                         </NavLink>
                     </div>
-                    <form className="d-flex nav-bar__search nav-bar__search--tablet px-4" role="search" >
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">
-                            <BsSearch />
-                        </button>
-                    </form>
-                    <button
+
+                    <Search className="d-flex nav-bar__search nav-bar__search--tablet px-4" placeholder="Search" />
+
+                    <Button
                         className="navbar-toggler"
                         type="button"
                         data-bs-toggle="collapse"
@@ -38,15 +33,10 @@ export const Header = () => (
                         aria-label="Toggle navigation"
                     >
                         <FaBars />
-                    </button>
+                    </Button>
                 </div>
                 <div className="collapse nav-bar__container navbar-collapse justify-content-end" id="navbarSupportedContent" >
-                    <form className="nav-bar__search nav-bar__search--desktop" role="search" >
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">
-                            <BsSearch />
-                        </button>
-                    </form>
+                    <Search className="nav-bar__search nav-bar__search--desktop" placeholder="Search" />
 
                     <ul className="navbar-nav mb-2 mb-lg-0">
                         <li className="nav-item">
