@@ -1,4 +1,4 @@
-import HeroBanner from '../../organisms/Hero-Banner/HeroBanner';
+import { HeroBanner } from '../../../stories/organisms/HeroBanner/HeroBanner';
 import './HomePage.scss';
 
 export default function Home() {

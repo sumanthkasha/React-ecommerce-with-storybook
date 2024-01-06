@@ -1,8 +1,11 @@
-import { BsSearch } from "react-icons/bs";
+import React from "react";
+
+import { FaShoppingBag, FaUser, FaArrowRight } from "react-icons/fa";
+import { Button } from "../../atoms/Button/Button";
+
 import './HeroBanner.scss';
 
-import { Button } from '../../../stories/atoms/Button/Button';
-export default function HeroBanner() {
+export const HeroBanner = () => {
     return (
         <section className="hero-banner">
             <div class="hero-banner__content">
@@ -14,27 +17,23 @@ export default function HeroBanner() {
                 </p>
                 <ul class="hero-banner__counter">
                     <li>
-                        <h3>
-                        <i class="fa-solid fa-bag-shopping"></i>68+k
+                        <h3 className="d-flex align-items-start">
+                            <FaShoppingBag />68+k
                         </h3>
                         <span>new collections</span>
                     </li>
                     <li>
-                        <h3>
-                            <i class="fa-solid fa-user"></i>25,634
+                        <h3 className="d-flex align-items-start">
+                            <FaUser />25,634
                         </h3>
                         <span>active customers</span>
                     </li>
                 </ul>
-                <button class="btn">
-                    Go to Collections <i class="fa-solid fa-arrow-right"></i>
-                </button>
-
-                <Button className="mx-2" id="searchButton" size="small" > 
-                    <BsSearch />
+                <Button class="btn">
+                    Go to Collections <FaArrowRight />
                 </Button>
             </div>
             <div class="circle"></div>
         </section>
-    );
+    )
 }
