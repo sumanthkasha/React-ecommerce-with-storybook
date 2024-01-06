@@ -3,6 +3,8 @@
 .cmp__slick-carousel {
     position: relative;
     margin-bottom: pxToRem(28px);
+    width: 95vw;
+    padding: 16px;
 
     button.slick-arrow {
         color: $black;
@@ -63,7 +65,15 @@
         }
     }
 
-    &__content * {
-        margin-bottom: 0;
+    &__content {
+        
+        * {
+            margin-bottom: 0;
+        }
+
+        .product__img {
+            max-width: 40px;
+            width: 100%;
+        }
     }
 }
