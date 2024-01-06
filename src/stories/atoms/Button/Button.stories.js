@@ -1,5 +1,4 @@
 import { Button } from './Button';
-import { AnchorButton } from './AnchorButton';
 
 export default {
   title: 'Atoms/Button',
