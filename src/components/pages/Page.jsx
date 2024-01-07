@@ -8,6 +8,7 @@ import './Page.scss';
 import { Header } from '../../stories/organisms/Header/Header';
 import { Footer } from '../../stories/organisms/Footer/Footer';
 import { Loader } from "../../stories/molecules/Loader/Loader";
+import { Error } from "../../stories/pages/Error/Error";
 
 export default function Page() {
     const dispatch = useDispatch();
@@ -15,9 +16,14 @@ export default function Page() {
 
     useEffect(() => {
         dispatch(fetchProductsData())
-    }, [])
+    }, [dispatch]);
 
-    console.log("State", state);
+    useEffect(() => {
+        if (!state.productData.isLoading) {
+            const productsData = state.productData.data;
+            localStorage.setItem('productsData', JSON.stringify(productsData));
+        }
+    }, [state.productsData]);
 
     return (
         <div className="page-container">
@@ -27,10 +33,12 @@ export default function Page() {
                 ?
                     <Loader />
                 :
+                    !state.productData.isError ? 
                     <>
                         <Outlet />
                         <Footer />
                     </>
+                    : <Error serverError={true} />
 
             }
         </div>

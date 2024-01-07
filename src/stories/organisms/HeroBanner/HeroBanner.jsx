@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { FaShoppingBag, FaUser, FaArrowRight } from "react-icons/fa";
 import { Button } from "../../atoms/Button/Button";
+import { Carousel } from "../../molecules/Carousel/Carousel";
 
 import './HeroBanner.scss';
+import { useSelector } from "react-redux";
 
 export const HeroBanner = () => {
+    const state = useSelector((state) => state);
+    const [heroCarouselData, setHeroCarouselData] = useState(null);
+
+    useEffect(() => {
+        if (state.productData.data) {
+            const firstTenElements = state.productData.data.slice(0, 7);
+            setHeroCarouselData(firstTenElements);
+        }
+    }, [state.productData.data]);
+
+    console.log(state);
+
     return (
         <section className="hero-banner">
             <div className="hero-banner__content">
@@ -32,6 +46,9 @@ export const HeroBanner = () => {
                 <Button className="btn">
                     Go to Collections <FaArrowRight />
                 </Button>
+            </div>
+            <div className="hero-banner__carousel">
+                <Carousel data={heroCarouselData} slidesToShow={3} />
             </div>
             <div className="circle"></div>
         </section>

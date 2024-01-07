@@ -27,6 +27,7 @@ const productDataSlice = createSlice({
         })
         builder.addCase(fetchProductsData.rejected, (state, action) => {
             console.log(action.payload);
+            state.isLoading = false;
             state.isError = true;
         })
     }
