@@ -1,5 +1,7 @@
+@import '../../../assets/base.scss';
+
 .storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-weight: 700;
   border: 0;
   border-radius: 3em;
@@ -8,28 +10,28 @@
   line-height: 1;
 
   &--primary {
-    color: white;
-    background-color: #1ea7fd;
+    color: $white;
+    background-color: $btn-primary;
   }
 
   &--secondary {
-    color: #333;
+    color: $gray-600;
     background-color: transparent;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
   }
 
   &--small {
     font-size: 12px;
-    padding: 10px 16px;
+    padding: pxToRem(10px) pxToRem(16px);
   }
 
   &--medium {
     font-size: 14px;
-    padding: 11px 20px;
+    padding: pxToRem(11px) pxToRem(20px);
   }
 
   &--large {
     font-size: 16px;
-    padding: 12px 24px;
+    padding: pxToRem(12px) pxToRem(24px);
   }
 }
