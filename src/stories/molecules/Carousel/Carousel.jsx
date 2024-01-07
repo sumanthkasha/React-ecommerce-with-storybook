@@ -7,14 +7,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './Carousel.scss';
 
-export const Carousel = ({dots, slidesToShow, slidesToScroll, data, ...props}) => {
+export const Carousel = ({dots, slidesToShow, slidesToScroll, autoplay, arrows, data, ...props}) => {
     
     var settings = {
         dots: dots,
         infinite: true,
         speed: 500,
         slidesToShow: slidesToShow,
-        slidesToScroll: slidesToScroll
+        slidesToScroll: slidesToScroll,
+        autoplay: autoplay,
+        autoplaySpeed: 3000,
+        arrows: arrows
     };
 
     function handleImageError(event) {
@@ -57,10 +60,14 @@ export const Carousel = ({dots, slidesToShow, slidesToScroll, data, ...props}) =
 
 Carousel.propTypes = {
     dots: PropTypes.bool,
+    autoplay: PropTypes.bool,
+    arrows: PropTypes.bool,
 };
 
 Carousel.defaultProps = {
     dots: true,
     slidesToShow: 4,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    arrows: true,
 }

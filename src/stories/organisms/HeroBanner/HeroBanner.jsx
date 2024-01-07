@@ -48,7 +48,7 @@ export const HeroBanner = () => {
                 </Button>
             </div>
             <div className="hero-banner__carousel">
-                <Carousel data={heroCarouselData} slidesToShow={3} />
+                <Carousel data={heroCarouselData} slidesToShow={3} arrows={false} />
             </div>
             <div className="circle"></div>
         </section>
