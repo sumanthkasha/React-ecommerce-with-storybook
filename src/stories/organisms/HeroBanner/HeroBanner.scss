@@ -93,4 +93,33 @@
         z-index: 1;
         opacity: 0.7;
     }
+
+    &__carousel {
+        width: 60%;
+        padding-left: 50px;
+
+        .cmp__slick-carousel {
+            width: 100%;
+
+            &__content {
+                text-align: center;
+                align-items: center;
+                padding: 32px;
+
+                height: 24rem;
+                position: relative;
+                border-radius: 12px;
+                box-shadow: -1px 5px 15px #0000001f;
+                text-align: center;
+                opacity: 0.4;
+                transition: opacity 0.4s ease-in;
+
+            }
+            .slick-current {
+                .cmp__slick-carousel__content {
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }
