@@ -1,0 +1,61 @@
+@import '../../../assets/base.scss';
+
+.loader {
+    position: relative;
+    width: pxToRem(180px);
+    height: pxToRem(90px);
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: 768px) {
+        width: pxToRem(90px);
+        height: pxToRem(45px);
+    }
+    
+    &:after, &:before {
+        position: absolute;
+        content: "";
+        width: pxToRem(25px);
+        height: pxToRem(25px);
+        top: pxToRem(10px);
+        border-radius: 50%;
+    }
+    
+    &:after {
+        animation: loader-move2 0.5s ease-in-out infinite;
+        animation-direction: alternate;
+        background-color: $shade-yellow;
+    }
+    
+    &:before {
+        animation: loader-move1 0.5s ease-in-out infinite;
+        animation-direction: alternate;
+        background-color: $black;
+    }
+}
+
+@keyframes loader-move1 {
+    0% {
+        transform: translatex(0px);
+    } 
+    65% {
+        width: pxToRem(25px);
+        height: pxToRem(25px);
+    }
+    100% {
+        transform: translatex(-15px);
+    }
+}
+
+@keyframes loader-move2 {
+    0% {
+        transform: translatex(0px);
+    } 
+    65% {
+        width: pxToRem(25px);
+        height: pxToRem(25px);
+    }
+    100% {
+        transform: translatex(15px);
+    }
+}
