@@ -1,23 +1,19 @@
 @import '../../../assets/base.scss';
 
 .loader {
-    position: relative;
-    width: pxToRem(180px);
-    height: pxToRem(90px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
+    z-index: 999;
 
-    @media screen and (max-width: 768px) {
-        width: pxToRem(90px);
-        height: pxToRem(45px);
-    }
-    
     &:after, &:before {
         position: absolute;
         content: "";
         width: pxToRem(25px);
         height: pxToRem(25px);
-        top: pxToRem(10px);
         border-radius: 50%;
     }
     

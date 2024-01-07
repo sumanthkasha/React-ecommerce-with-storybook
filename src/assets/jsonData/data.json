@@ -1,0 +1,653 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "brand_name": "HueTap",
+            "description": "Printed Round Neck T-shirt",
+            "image": "tshirt1.webp",
+            "type": "tshirt",
+            "popularity": 4,
+            "price": 150,
+            "discount": "11%"
+        },
+        {
+            "id": 3,
+            "brand_name": "Moda Rapido",
+            "description": "Solid Polo Collar T-shirt",
+            "image": "tshirt3.webp",
+            "type": "tshirt",
+            "popularity": 6,
+            "price": 300,
+            "discount": "12%"
+        },
+        {
+            "id": 9,
+            "brand_name": "Levis",
+            "description": "Men Polo Collar T-shirt",
+            "image": "tshirt9.webp",
+            "type": "tshirt",
+            "popularity": 10,
+            "price": 1250,
+            "discount": "15%"
+        },
+        {
+            "id": 2,
+            "brand_name": "Campus Sutra",
+            "description": "Colourblocked Collar T-shirt",
+            "image": "tshirt2.webp",
+            "type": "tshirt",
+            "popularity": 5,
+            "price": 200,
+            "discount": "20%"
+        },
+        {
+            "id": 4,
+            "brand_name": "Roadster",
+            "description": "Henley NeckCollar T-shirt",
+            "image": "tshirt4.webp",
+            "type": "tshirt",
+            "popularity": 8,
+            "price": 450,
+            "discount": "35%"
+        },
+        {
+            "id": 6,
+            "brand_name": "Nautica",
+            "description": "Men Stripped Collar T-shirt",
+            "image": "tshirt6.webp",
+            "type": "tshirt",
+            "popularity": 3,
+            "price": 650,
+            "discount": "8%"
+        },
+        {
+            "id": 7,
+            "brand_name": "Dillinger",
+            "description": "Round Neck Collar T-shirt",
+            "image": "tshirt7.webp",
+            "type": "tshirt",
+            "popularity": 7,
+            "price": 850,
+            "discount": "7%"
+        },
+        {
+            "id": 5,
+            "brand_name": "GANT",
+            "description": "Men Polo Collar T-shirt",
+            "image": "tshirt5.webp",
+            "type": "tshirt",
+            "popularity": 2,
+            "price": 570,
+            "discount": "9%"
+        },
+        {
+            "id": 8,
+            "brand_name": "Allen Solly Sport",
+            "description": "Stripped Polo Collar T-shirt",
+            "image": "tshirt8.webp",
+            "type": "tshirt",
+            "popularity": 9,
+            "price": 1000,
+            "discount": "50%"
+        },
+        {
+            "id": 10,
+            "brand_name": "GANT",
+            "description": "Varsity Graphic T-shirt",
+            "image": "tshirt10.webp",
+            "type": "tshirt",
+            "popularity": 10,
+            "price": 1800,
+            "discount": "25%"
+        },
+        {
+            "id": 12,
+            "brand_name": "Nautica",
+            "description": "Men Polo Collar T-shirt",
+            "image": "tshirt12.webp",
+            "type": "tshirt",
+            "popularity": 8,
+            "price": 2500,
+            "discount": "19%"
+        },
+        {
+            "id": 15,
+            "brand_name": "ColorPlus",
+            "description": "Men Solid Collar T-shirt",
+            "image": "tshirt15.webp",
+            "type": "tshirt",
+            "popularity": 3,
+            "price": 5050,
+            "discount": "31%"
+        },
+        {
+            "id": 13,
+            "brand_name": "Roadster",
+            "description": "Men Solid Cotton T-shirt",
+            "image": "tshirt13.webp",
+            "type": "tshirt",
+            "popularity": 6,
+            "price": 4050,
+            "discount": "45%"
+        },
+        {
+            "id": 11,
+            "brand_name": "Calvin Klein",
+            "description": "Solid Round Neck T-shirt",
+            "image": "tshirt11.webp",
+            "type": "tshirt",
+            "popularity": 5,
+            "price": 2100,
+            "discount": "54%"
+        },
+        {
+            "id": 14,
+            "brand_name": "Mast & Habour",
+            "description": "Printed Polo Collar T-shirt",
+            "image": "tshirt14.webp",
+            "type": "tshirt",
+            "popularity": 2,
+            "price": 5000,
+            "discount": "33%"
+        },
+        {
+            "id": 64,
+            "brand_name": "Dillinger",
+            "description": "Round Neck Collar T-shirt",
+            "image": "tshirt7.webp",
+            "type": "tshirt",
+            "popularity": 7,
+            "price": 850,
+            "discount": "7%"
+        },
+        
+
+        {
+            "id": 16,
+            "brand_name": "HIGHLANDER",
+            "description": "Slim Fit Casual Shirt",
+            "image": "shirt1.webp",
+            "type": "shirt",
+            "popularity": 5,
+            "price": 200,
+            "discount": "18%"
+        },
+        {
+            "id": 19,
+            "brand_name": "GANT",
+            "description": "Regular Fit Casual Shirt",
+            "image": "shirt4.webp",
+            "type": "shirt",
+            "popularity": 8,
+            "price": 420,
+            "discount": "18%"
+        },
+        {
+            "id": 18,
+            "brand_name": "Louis Philippe Sport",
+            "description": "Cotton Super Slim Shirt",
+            "image": "shirt3.webp",
+            "type": "shirt",
+            "popularity": 4,
+            "price": 380,
+            "discount": "22%"
+        },
+        {
+            "id": 29,
+            "brand_name": "GANT",
+            "description": "Regular Fit Casual Shirt",
+            "image": "shirt15.webp",
+            "type": "shirt",
+            "popularity": 9,
+            "price": 5000,
+            "discount": "12%"  
+        },
+        {
+            "id": 20,
+            "brand_name": "Keech Star Wars",
+            "description": "Men Denim Casual Shirt",
+            "image": "shirt5.webp",
+            "type": "shirt",
+            "popularity": 3,
+            "price": 530,
+            "discount": "6%"
+        },
+        {
+            "id": 21,
+            "brand_name": "LOCOMOTIVE",
+            "description": "Slim Fit Casual Shirt",
+            "image": "shirt6.webp",
+            "type": "shirt",
+            "popularity": 6,
+            "price": 650,
+            "discount": "22%"
+        },
+        {
+            "id": 17,
+            "brand_name": "Roadster",
+            "description": "Printed Casual Shirt",
+            "image": "shirt2.webp",
+            "type": "shirt",
+            "popularity": 10,
+            "price": 280,
+            "discount": "6%"
+        },
+        {
+            "id": 22,
+            "brand_name": "HERE&NOW",
+            "description": "Cotton Slim Fit Shirt",
+            "image": "shirt7.webp",
+            "type": "shirt",
+            "popularity": 2,
+            "price": 780,
+            "discount": "18%"
+        },
+        {
+            "id": 25,
+            "brand_name": "WROGN",
+            "description": "Fit Solid Casual Shirt",
+            "image": "shirt11.webp",
+            "type": "shirt",
+            "popularity": 7,
+            "price": 1800,
+            "discount": "27%"  
+        },
+        {
+            "id": 28,
+            "brand_name": "Allen Solly",
+            "description": "Modern Fit Opaque Shirt",
+            "image": "shirt14.webp",
+            "type": "shirt",
+            "popularity": 8,
+            "price": 4500,
+            "discount": "7%"  
+        },
+        {
+            "id": 26,
+            "brand_name": "Levis",
+            "description": "Checks Cotton Reversible",
+            "image": "shirt12.webp",
+            "type": "shirt",
+            "popularity": 5,
+            "price": 2500,
+            "discount": "55%"  
+        },
+        {
+            "id": 23,
+            "brand_name": "English Navy",
+            "description": "Cotton Slim Fit Shirt",
+            "image": "shirt8.webp",
+            "type": "shirt",
+            "popularity": 4,
+            "price": 1000,
+            "discount": "31%"
+        },
+        {
+            "id": 27,
+            "brand_name": "Bene Kleed",
+            "description": "Slim Fit Casual Shirt",
+            "image": "shirt13.webp",
+            "type": "shirt",
+            "popularity": 10,
+            "price": 2800,
+            "discount": "45%"  
+        },
+        {
+            "id": 24,
+            "brand_name": "H&M",
+            "description": "Floral Printed Casual Shirt",
+            "image": "shirt9.webp",
+            "type": "shirt",
+            "popularity": 1,
+            "price": 1300,
+            "discount": "19%"   
+        },
+        {
+            "id": 30,
+            "brand_name": "WROGN",
+            "description": "Fit Solid Casual Shirt",
+            "image": "shirt10.webp",
+            "type": "shirt",
+            "popularity": 9,
+            "price": 5500,
+            "discount": "20%"  
+        },
+        {
+            "id": 63,
+            "brand_name": "Allen Solly",
+            "description": "Modern Fit Opaque Shirt",
+            "image": "shirt14.webp",
+            "type": "shirt",
+            "popularity": 8,
+            "price": 4500,
+            "discount": "7%"  
+        },
+
+
+        {
+            "id": 45,
+            "brand_name":"Louis Philippe",
+            "description": "Slim Fit Formal Trousers",
+            "image": "trouser15.webp",
+            "type": "trouser",
+            "popularity": 3,
+            "price": 4700,
+            "discount": "64%"
+        },
+        {
+            "id": 32,
+            "brand_name": "Hangup",
+            "description": "Men Black Solid Formal",
+            "image": "trouser2.webp",
+            "type": "trouser",
+            "popularity": 10,
+            "price": 240,
+            "discount": "13%" 
+        },
+        {
+            "id": 33,
+            "brand_name": "Raymond",
+            "description": "Men Grey Textured Fit ",
+            "image": "trouser3.webp",
+            "type": "trouser",
+            "popularity": 4,
+            "price": 350,
+            "discount": "12%" 
+        },
+        {
+            "id": 42,
+            "brand_name":"Blackberrys",
+            "description": "Men Slim Fit Formal",
+            "image": "trouser12.webp",
+            "type": "trouser",
+            "popularity": 5,
+            "price": 2850,
+            "discount": "45%"
+        },
+        {
+            "id": 34,
+            "brand_name": "Hangup Trend",
+            "description": "Men Grey Regular Fit",
+            "image": "trouser4.webp",
+            "type": "trouser",
+            "popularity": 8,
+            "price": 500,
+            "discount": "65%" 
+        },
+        {
+            "id": 44,
+            "brand_name":"Arrow New York",
+            "description": "Men Skinny Fit Self ",
+            "image": "trouser14.webp",
+            "type": "trouser",
+            "popularity": 8,
+            "price": 4400,
+            "discount": "44%"
+        },
+        {
+            "id": 35,
+            "brand_name":"INVICTUS",
+            "description": "Charcoal Grey Slim Fit",
+            "image": "trouser4.webp",
+            "type": "trouser",
+            "popularity": 3,
+            "price": 600,
+            "discount": "22%"
+        },
+        {
+            "id": 31,
+            "brand_name": "Van Heusen",
+            "description": "Men Grey Checked Fit ",
+            "image": "trouser1.webp",
+            "type": "trouser",
+            "popularity": 5,
+            "price": 150,
+            "discount": "18%" 
+        },
+        {
+            "id": 36,
+            "brand_name":"Park Avenue",
+            "description": "Men Black Smart Fit ",
+            "image": "trouser5.webp",
+            "type": "trouser",
+            "popularity": 6,
+            "price": 690,
+            "discount": "12%"
+        },
+        
+        {
+            "id": 38,
+            "brand_name":"Louis Philippe",
+            "description": "Men Tapered Fit Formal",
+            "image": "trouser7.webp",
+            "type": "trouser",
+            "popularity": 4,
+            "price": 1250,
+            "discount": "12%"
+        },
+        {
+            "id": 39,
+            "brand_name":"V2 Value & Variety",
+            "description": "Men Beige Formal Trousers",
+            "image": "trouser8.webp",
+            "type": "trouser",
+            "popularity": 1,
+            "price": 1350,
+            "discount": "7%"
+        },
+        {
+            "id": 40,
+            "brand_name":"DENNISON",
+            "description": "Men Smart Fit Formal",
+            "image": "trouser9.webp",
+            "type": "trouser",
+            "popularity": 7,
+            "price": 1850,
+            "discount": "19%"
+        },
+        {
+            "id": 37,
+            "brand_name":"Louis Philippe",
+            "description": "Men Slim Fit Checked",
+            "image": "trouser6.webp",
+            "type": "trouser",
+            "popularity": 2,
+            "price": 950,
+            "discount": "30%"
+        },
+        {
+            "id": 41,
+            "brand_name":"Solemio",
+            "description": "Men Textured Slim Fit",
+            "image": "trouser10.webp",
+            "type": "trouser",
+            "popularity": 9,
+            "price": 2200,
+            "discount": "21%"
+        },
+        {
+            "id": 43,
+            "brand_name":"JAINISH",
+            "description": "Men Fit Formal Trousers",
+            "image": "trouser13.webp",
+            "type": "trouser",
+            "popularity": 10,
+            "price": 4100,
+            "discount": "22%"
+        },
+        {
+            "id": 62,
+            "brand_name":"V2 Value & Variety",
+            "description": "Men Beige Formal Trousers",
+            "image": "trouser8.webp",
+            "type": "trouser",
+            "popularity": 1,
+            "price": 1350,
+            "discount": "7%"
+        },
+
+
+
+        {
+            "id": 46,
+            "brand_name":"HIGHLANDER",
+            "description": "Men White Sneakers",
+            "image": "shoe1.webp",
+            "type": "shoe",
+            "popularity": 5,
+            "price": 170,
+            "discount": "12%"
+        },
+        {
+            "id": 47,
+            "brand_name":"U.S. Polo Assn.",
+            "description": "Grey Textured Loafers",
+            "image": "shoe2.webp",
+            "type": "shoe",
+            "popularity": 10,
+            "price": 240,
+            "discount": "18%"
+        },
+        {
+            "id": 48,
+            "brand_name":"PUMA Motorsport",
+            "description": "Unisex Black Ultra Sneakers",
+            "image": "shoe3.webp",
+            "type": "shoe",
+            "popularity": 4,
+            "price": 360,
+            "discount": "24%"
+        },
+        {
+            "id": 49,
+            "brand_name":"El Paso",
+            "description": "Men Brown Derbys",
+            "image": "shoe4.webp",
+            "type": "shoe",
+            "popularity": 8,
+            "price": 490,
+            "discount": "28%"   
+        },
+        {
+            "id": 50,
+            "brand_name":"Roadster",
+            "description": "Men Mint Grey Sneakers",
+            "image": "shoe5.webp",
+            "type": "shoe",
+            "popularity": 3,
+            "price": 570,
+            "discount": "34%" 
+        },
+        {
+            "id": 51,
+            "brand_name":"Mast & Harbour",
+            "description": "Burgundy Woven Sneakers",
+            "image": "shoe6.webp",
+            "type": "shoe",
+            "popularity": 6,
+            "price": 680,
+            "discount": "38%" 
+        },
+        {
+            "id": 52,
+            "brand_name":"Red Tape",
+            "description": "Men Grey Colourblocked",
+            "image": "shoe7.webp",
+            "type": "shoe",
+            "popularity": 2,
+            "price": 740,
+            "discount": "44%" 
+        },
+        {
+            "id": 53,
+            "brand_name":"Fentacia",
+            "description": "Men Olive Green Loafers",
+            "image": "shoe8.webp",
+            "type": "shoe",
+            "popularity": 4,
+            "price": 1020,
+            "discount": "48%" 
+        },
+        {
+            "id": 54,
+            "brand_name":"Roadster",
+            "description": "Men Navy Sneakers",
+            "image": "shoe9.webp",
+            "type": "shoe",
+            "popularity": 1,
+            "price": 1450,
+            "discount": "54%" 
+        },
+        {
+            "id": 55,
+            "brand_name":"ASIAN",
+            "description": "Men Grey Mesh Shoes",
+            "image": "shoe10.webp",
+            "type": "shoe",
+            "popularity": 7,
+            "price": 1800,
+            "discount": "58%" 
+        },
+        {
+            "id": 56,
+            "brand_name":"Red Tape",
+            "description": "Men Black Textile Shoes",
+            "image": "shoe11.webp",
+            "type": "shoe",
+            "popularity": 9,
+            "price": 2200,
+            "discount": "64%" 
+        },
+        {
+            "id": 57,
+            "brand_name":"Puma",
+            "description": "Black Cell Fraction Fade",
+            "image": "shoe12.webp",
+            "type": "shoe",
+            "popularity": 10,
+            "price": 2900,
+            "discount": "68%" 
+        },
+        {
+            "id": 58,
+            "brand_name":" H&M ",
+            "description": "Mens Green Canvas hi-top",
+            "image": "shoe13.webp",
+            "type": "shoe",
+            "popularity": 5,
+            "price": 3500,
+            "discount": "72%" 
+        },
+        {
+            "id": 59,
+            "brand_name":" HRX ",
+            "description": "Men White Fly Sneakers",
+            "image": "shoe14.webp",
+            "type": "shoe",
+            "popularity": 9,
+            "price": 4500,
+            "discount": "77%" 
+        },
+        {
+            "id": 60,
+            "brand_name":"Provogue",
+            "description": "Men Blue Loafers",
+            "image": "shoe15.webp",
+            "type": "shoe",
+            "popularity": 3,
+            "price": 5000,
+            "discount": "84%" 
+        },
+        {
+            "id": 61,
+            "brand_name":"Puma",
+            "description": "Black Cell Fraction Fade",
+            "image": "shoe12.webp",
+            "type": "shoe",
+            "popularity": 10,
+            "price": 2900,
+            "discount": "68%"
+        }
+
+    ]
+}
