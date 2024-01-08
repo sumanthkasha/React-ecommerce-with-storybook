@@ -4,15 +4,14 @@
     position: relative;
     align-items: center;
     justify-content: center;
-    // background: #100034;
     background-color: $dark-blue;
     padding: 18px;
     overflow: hidden;
-    // height: 90vh;
+    display: flex;
+    justify-content: flex-start;
 
-    @media screen and (min-width: 992px) {
-        display: flex;
-        justify-content: flex-start;
+    @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
     }
 
     &__content {
@@ -21,13 +20,26 @@
         color: $white;
         position: relative;
         z-index: 2;
+
+        @media screen and (max-width: 768px) {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-left: 0;
+        }
     }
 
     h2 {
         letter-spacing: 0.8px;
         font-weight: 700;
-        font-size: 2.8rem;
+        font-size: 44px;
         line-height: 1.2;
+
+        @media screen and (max-width: 992px) {
+            font-size: 32px;
+        }
     }
 
     p {
@@ -35,6 +47,10 @@
         line-height: 1.8;
         margin-inline: auto;
         margin-top: 10px;
+
+        @media screen and (max-width: 992px) {
+            font-size: 14px;
+        }
     }
 
     &__counter {
@@ -95,30 +111,71 @@
     }
 
     &__carousel {
+        position: relative;
         width: 60%;
         padding-left: 50px;
+        z-index: 9;
+
+        @media screen and (max-width: 768px) {
+            padding-left: 0;
+            width: 100%;
+        }
 
         .cmp__slick-carousel {
             width: 100%;
 
             &__content {
+                background: $white;
                 text-align: center;
                 align-items: center;
-                padding: 32px;
-
+                justify-content: center;
+                padding: 18px;
+                max-width: 226px !important;
                 height: 24rem;
                 position: relative;
                 border-radius: 12px;
                 box-shadow: -1px 5px 15px #0000001f;
                 text-align: center;
-                opacity: 0.4;
-                transition: opacity 0.4s ease-in;
+                cursor: pointer;
+
+                @media screen and (max-width: 992px) {
+                    max-width: 400px !important;
+                }
+
+                &:active {
+                    cursor: grabbing;
+                }
+
+                .product__img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    object-fit: contain;
+                    max-width: 100%;
+                }
+
+                .product__brand {
+                    font-size: 18px;
+                    font-weight: 600;
+                    padding-top: 10px;
+                }
+
+                .product__desc {
+                    font-size: 14px;
+                    padding-top: 10px;
+                }
 
             }
-            .slick-current {
-                .cmp__slick-carousel__content {
-                    opacity: 1;
-                }
+
+            &__img-wrapper {
+                width: 100%;
+                aspect-ratio: 1/1;
+                overflow: hidden;
+            }
+
+            .slick-track {
+                display: flex;
+                gap: 10px;
             }
         }
     }
