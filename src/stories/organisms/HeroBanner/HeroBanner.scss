@@ -85,7 +85,6 @@
     .btn {
         background-color: $magenta;
         border: none;
-        color: $white;
         padding: 12px 20px;
         font-size: 16px;
         cursor: pointer;
@@ -95,6 +94,11 @@
 
         &:hover {
             background-color: $shade-magenta;
+        }
+
+        a {
+            color: $white;
+            text-decoration: none;
         }
     }
 

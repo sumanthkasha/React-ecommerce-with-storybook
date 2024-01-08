@@ -61,7 +61,7 @@ export default function Home() {
     return (
         <main>
             <HeroBanner />
-            <Carousel data={renderData} autoplay={false} />
+            <Carousel data={renderData} autoplay={false} arrows={true}/>
         </main>
     )
 }

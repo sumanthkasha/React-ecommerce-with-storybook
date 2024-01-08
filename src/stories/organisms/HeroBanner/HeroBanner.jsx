@@ -6,6 +6,7 @@ import { Carousel } from "../../molecules/Carousel/Carousel";
 
 import './HeroBanner.scss';
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export const HeroBanner = () => {
     const state = useSelector((state) => state);
@@ -44,8 +45,6 @@ export const HeroBanner = () => {
         };
       }, []);
 
-    console.log(state);
-
     return (
         <section className="hero-banner">
             <div className="hero-banner__content">
@@ -70,7 +69,7 @@ export const HeroBanner = () => {
                     </li>
                 </ul>
                 <Button className="btn">
-                    Go to Collections <FaArrowRight />
+                    <Link to={"/collections"} >Go to Collections <FaArrowRight /></Link>
                 </Button>
             </div>
             <div className="hero-banner__carousel">
@@ -80,7 +79,6 @@ export const HeroBanner = () => {
                     slidesToScroll={1}
                     arrows={false} 
                     variableWidth= {true}
-                    autoplay= {false}
                 />
             </div>
             <div className="circle"></div>

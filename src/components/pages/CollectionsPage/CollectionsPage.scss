@@ -1,0 +1,71 @@
+@import '../../../assets/base.scss';
+
+.product {
+    &__categories {
+        // width: 20%;
+        position: sticky;
+        top: pxToRem(53px);
+        margin-right: pxToRem(8px);
+        background: $white;
+        flex-wrap: wrap;
+    }
+    &__filtered {
+        // width: 80%;
+        background: $white;
+    }
+    &__filters {
+        padding: pxToRem(8px);
+        gap: pxToRem(8px);
+
+        li {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: pxToRem(6px);
+            text-transform: capitalize;
+            border-bottom: pxToRem(2px) solid transparent;
+
+            &.active {
+                color: $shade-blue;
+                border-bottom: pxToRem(2px) solid $shade-blue;
+            }
+            &:hover {
+                color: $shade-blue;
+                transition: all .2s ease-in-out;
+            }
+        }
+    }
+
+    &__sorts {
+        gap: pxToRem(16px);
+
+        span:hover {
+            color: $shade-blue;
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+        }
+    }
+
+    &__sort-by-price.active,
+    &__sort-by-discount.active {
+        color: $shade-blue;
+        cursor: pointer;
+    }
+
+    &__product-list {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    &__product {
+        max-width: pxToRem(250px);
+        flex: 1;
+        cursor: pointer;
+    }
+    &__img {
+        object-fit: contain;
+    }
+}
