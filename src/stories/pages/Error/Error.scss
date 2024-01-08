@@ -7,6 +7,10 @@
     inset: 0;
     margin: auto;
 
+    &__server-error {
+        position: relative;
+    }
+
     &__code {
         font-size: 50px;
     }

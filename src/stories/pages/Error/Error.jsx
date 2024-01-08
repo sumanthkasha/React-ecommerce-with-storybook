@@ -12,7 +12,7 @@ export const Error = ({serverError, ...props}) => {
             {
                 serverError 
                 ?
-                <section className="cmp-error">
+                <section className="cmp-error cmp-error__server-error">
                     <h1 className="cmp-error__icon"> <CiWarning /> </h1>
                     <h2 className="cmp-error__message">Uh-Oh! Server not responsing</h2>
                 </section>
