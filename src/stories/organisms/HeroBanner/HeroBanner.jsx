@@ -68,7 +68,7 @@ export const HeroBanner = () => {
                         <span>active customers</span>
                     </li>
                 </ul>
-                <Button className="btn" onClick={handleCollections}>
+                <Button className="btn">
                     <Link to={"/collections"} >Go to Collections <FaArrowRight /></Link>
                 </Button>
             </div>
