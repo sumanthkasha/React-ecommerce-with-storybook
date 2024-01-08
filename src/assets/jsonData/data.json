@@ -647,7 +647,34 @@
             "popularity": 10,
             "price": 2900,
             "discount": "68%"
+        },
+        {
+            "id": 62,
+            "tag": "bestseller",
+            "brand_name":"Asian",
+            "image": "sneaker-bestseller.jpg",
+            "description": "ASIAN Men's Thunder-34 White Casual Sneaker"
+        },
+        {
+            "id": 63,
+            "tag": "bestseller",
+            "brand_name":"Generic",
+            "image": "kurtha-bestseller.jpg",
+            "description": "Enmozz® Haldi Yellow Cotton Plain Men's Ethnic Simple Kurta"
+        },
+        {
+            "id": 64,
+            "tag": "bestseller",
+            "brand_name":"Fastrack",
+            "image": "watch-bestseller.jpg",
+            "description": "Fastrack Casual Analog Black Dial Men's Watch"
+        },
+        {
+            "id": 65,
+            "tag": "bestseller",
+            "brand_name":"Flagship smartphones",
+            "image": "mobile-bestseller.avif",
+            "description": "Best premium flagship smartphones to buy in India"
         }
-
     ]
 }

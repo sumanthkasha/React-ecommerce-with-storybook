@@ -17,7 +17,8 @@ export const Carousel = ({dots, slidesToShow, slidesToScroll, autoplay, arrows, 
         slidesToScroll: slidesToScroll,
         autoplay: autoplay,
         autoplaySpeed: 3000,
-        arrows: arrows
+        arrows: arrows, 
+        ...props
     };
 
     function handleImageError(event) {
@@ -28,12 +29,14 @@ export const Carousel = ({dots, slidesToShow, slidesToScroll, autoplay, arrows, 
         return (
             data.map((element, index) => (
                 <div key={index} className="cmp__slick-carousel__content d-flex flex-column product__product">
-                    <img 
-                        className="product__img" 
-                        src={"/images/" + (element.image || "default-image.svg")} 
-                        alt={element.brand_name || 'Unknown Brand' + " " + element.type || '' } 
-                        onError={handleImageError}
-                    />
+                    <div className="cmp__slick-carousel__img-wrapper">
+                        <img 
+                            className="product__img" 
+                            src={"/images/" + (element.image || "default-image.svg")} 
+                            alt={element.brand_name || 'Unknown Brand' + " " + element.type || '' } 
+                            onError={handleImageError}
+                        />
+                    </div>
                     
                     {element.brand_name && <span className="product__brand"> {element.brand_name} </span>}
                     {element.description && <span className="product__desc"> {element.description} </span>}

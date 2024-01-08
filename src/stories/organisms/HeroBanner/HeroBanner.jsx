@@ -9,14 +9,40 @@ import { useSelector } from "react-redux";
 
 export const HeroBanner = () => {
     const state = useSelector((state) => state);
+    const [slidesToShow, setSlidesToShow] = useState(3);
     const [heroCarouselData, setHeroCarouselData] = useState(null);
 
     useEffect(() => {
+        // if (state.productData.data) {
+        //     const firstTenElements = state.productData.data.slice(0, 7);
+        //     setHeroCarouselData(firstTenElements);
+        // }
+
         if (state.productData.data) {
-            const firstTenElements = state.productData.data.slice(0, 7);
+            const firstTenElements = state.productData.data.filter( element => element.tag === "bestseller");
+            console.log(firstTenElements);
             setHeroCarouselData(firstTenElements);
         }
+
     }, [state.productData.data]);
+
+    useEffect(() => {
+        const handleResize = () => {
+          if (window.innerWidth >= 992) {
+            setSlidesToShow(3);
+          } else if (window.innerWidth >= 768) {
+            setSlidesToShow(2);
+          } else {
+            setSlidesToShow(1);
+          }
+        };
+    
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
 
     console.log(state);
 
@@ -48,7 +74,14 @@ export const HeroBanner = () => {
                 </Button>
             </div>
             <div className="hero-banner__carousel">
-                <Carousel data={heroCarouselData} slidesToShow={3} arrows={false} />
+                <Carousel 
+                    data={heroCarouselData} 
+                    slidesToShow={slidesToShow} 
+                    slidesToScroll={1}
+                    arrows={false} 
+                    variableWidth= {true}
+                    autoplay= {false}
+                />
             </div>
             <div className="circle"></div>
         </section>
