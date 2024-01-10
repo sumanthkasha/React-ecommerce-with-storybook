@@ -1,25 +1,51 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct, removeProduct } from "../../../redux/slice/productDataSlice";
 
 import { Loader } from '../../../stories/molecules/Loader/Loader';
+import { Button } from "../../../stories/atoms/Button/Button";
+import { FaHeart } from "react-icons/fa";
+import { CiHeart } from "react-icons/ci";
 import "./CollectionsPage.scss";
 
 const CollectionsPage = () => {
-
+    const dispatch = useDispatch();
     const state = useSelector((state) => state);
-    const [productList, setProductList] = useState(null);
+
+    const [productList, setProductList] = useState(state.productData.data || []);
     const [filteredProductList, setFilteredProductList] = useState(null);
     const [activeCategory, setActiveCategory] = useState(null);
     const [activeSortByPrice, setActiveSortByPrice] = useState(null);
     const [activeSortByDiscount, setActiveSortByDiscount] = useState(null);
+    const [wishlistData, setWishListData] = useState({});
 
     useEffect(() => {
-        setProductList(state.productData.data);
         if(productList != null) {
             filteredProducts("tshirt")
         }
-    }, [state, productList]);
+    }, [productList]);
+
+    useEffect(() => {
+        for (const productId in wishlistData) {
+            if (wishlistData.hasOwnProperty(productId)) {
+                const status = wishlistData[productId];
+                if (status === "add") {
+                    dispatch(addProduct(productId));
+                } else if (status === "remove") {
+                    dispatch(removeProduct(productId));
+                }
+            }
+        }
+    }, [wishlistData, dispatch]);
+
+    const handleUpdateWishlist = (productId) => {
+        const newStatus = wishlistData[productId] === "add" ? "remove" : "add";
+        setWishListData({
+          ...wishlistData,
+          [productId]: newStatus,
+        });
+    };
 
     const filteredProducts = (data="tshirt") => {
         const renderedProducts = [];
@@ -32,8 +58,6 @@ const CollectionsPage = () => {
         setFilteredProductList(renderedProducts);
         setActiveCategory(data);
     }
-
-    
 
     if (state.productData.isLoading) {
         return (
@@ -106,6 +130,17 @@ const CollectionsPage = () => {
                                 filteredProductList && filteredProductList.map((prod) => (
 
                                     <li key={prod.id} className="d-flex flex-column product__product">
+                                        <Button
+                                            className="product__wishlist"
+                                            value={prod.id}
+                                            onClick={() => handleUpdateWishlist(prod.id)}
+                                        >
+                                            {
+                                                wishlistData[prod.id.toString()] === 'remove' || !wishlistData[prod.id]
+                                                ? <CiHeart />
+                                                : <FaHeart />
+                                            }
+                                        </Button>
                                         <img className="product__img" src={ "./images/"+prod.image } alt={ prod.brand_name + " " + prod.type } />
                                         <span className="product__brand"> { prod.brand_name } </span>
                                         <span className="product__desc"> { prod.description } </span>

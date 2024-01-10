@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import { FaShoppingBag, FaUser, FaArrowRight } from "react-icons/fa";
-import { Button } from "../../atoms/Button/Button";
-import { Carousel } from "../../molecules/Carousel/Carousel";
+import { Button } from "../../../stories/atoms/Button/Button";
+import { Carousel } from "../../../stories/molecules/Carousel/Carousel";
 
 import './HeroBanner.scss';
 import { useSelector } from "react-redux";
@@ -21,7 +21,7 @@ export const HeroBanner = () => {
 
         if (state.productData.data) {
             const firstTenElements = state.productData.data.filter( element => element.tag === "bestseller");
-            console.log(firstTenElements);
+            // console.log(firstTenElements);
             setHeroCarouselData(firstTenElements);
         }
 
