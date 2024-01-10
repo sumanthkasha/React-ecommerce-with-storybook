@@ -40,15 +40,13 @@ const wishlistDataSlice = createSlice({
     },
     reducers: {
         addProduct: (state, action) => {
-            console.log(typeof action.payload);
             const existingProduct = state.wishlistData.find((product) => product === action.payload);
             if (!existingProduct) {
                 state.wishlistData.push(action.payload);
             }
         },
         removeProduct: (state, action) => {
-            console.log(action.payload);
-            state.wishlistData = state.wishlistData.filter((product) => product.id !== action.payload.id);
+            state.wishlistData = state.wishlistData.filter((product) => product !== action.payload);
         },
     },
 });
