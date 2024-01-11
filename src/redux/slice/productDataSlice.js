@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
 
 export const fetchProductsData = createAsyncThunk('fetchProducs', async () => {
-    console.log("fetched");
     try {
         const response = await axios.get('http://localhost:8000/data');
         return response.data;
@@ -11,7 +10,7 @@ export const fetchProductsData = createAsyncThunk('fetchProducs', async () => {
     }
 });
 
-const productDataSlice = createSlice({
+export const productDataSlice = createSlice({
     name: 'productsData',
     initialState: {
         isLoading: false,
@@ -34,4 +33,46 @@ const productDataSlice = createSlice({
     }
 });
 
-export default productDataSlice.reducer;
+const wishlistDataSlice = createSlice({
+    name: 'wishlist',
+    initialState: {
+      wishlistData: [],
+    },
+    reducers: {
+        addProduct: (state, action) => {
+            const existingProduct = state.wishlistData.find((product) => product === action.payload);
+            if (!existingProduct) {
+                state.wishlistData.push(action.payload);
+            }
+        },
+        removeProduct: (state, action) => {
+            state.wishlistData = state.wishlistData.filter((product) => product !== action.payload);
+        },
+    },
+});
+
+const cartDataSlice = createSlice ({
+    name: 'cart',
+    initialState: {
+      cartData: [],
+    },
+    reducers: {
+        addProductToCart: (state, action) => {
+            const existingProduct = state.cartData.find((product) => product === action.payload);
+            if (!existingProduct) {
+                state.cartData.push(action.payload);
+            }
+        },
+        removeProductFromCart: (state, action) => {
+            state.cartData = state.cartData.filter((product) => product !== action.payload);
+        },
+    },
+})
+
+export const productDataReducer = productDataSlice.reducer;
+
+export const { addProduct, removeProduct } = wishlistDataSlice.actions;
+export const wishlistDataReducer = wishlistDataSlice.reducer;
+
+export const { addProductToCart, removeProductFromCart } = cartDataSlice.actions;
+export const cartDataReducer = cartDataSlice.reducer;
