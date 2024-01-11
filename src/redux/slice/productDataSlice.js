@@ -51,6 +51,28 @@ const wishlistDataSlice = createSlice({
     },
 });
 
+const cartDataSlice = createSlice ({
+    name: 'cart',
+    initialState: {
+      cartData: [],
+    },
+    reducers: {
+        addProductToCart: (state, action) => {
+            const existingProduct = state.cartData.find((product) => product === action.payload);
+            if (!existingProduct) {
+                state.cartData.push(action.payload);
+            }
+        },
+        removeProductFromCart: (state, action) => {
+            state.cartData = state.cartData.filter((product) => product !== action.payload);
+        },
+    },
+})
+
 export const productDataReducer = productDataSlice.reducer;
+
 export const { addProduct, removeProduct } = wishlistDataSlice.actions;
 export const wishlistDataReducer = wishlistDataSlice.reducer;
+
+export const { addProductToCart, removeProductFromCart } = cartDataSlice.actions;
+export const cartDataReducer = cartDataSlice.reducer;

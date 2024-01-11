@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsData } from "../../redux/slice/productDataSlice";
@@ -13,6 +13,7 @@ import { Error } from "../../stories/pages/Error/Error";
 export default function Page() {
     const dispatch = useDispatch();
     const state = useSelector((state) => state);
+    const [cartCount, setCartCount] = useState();
 
     useEffect(() => {
         dispatch(fetchProductsData())
@@ -23,11 +24,13 @@ export default function Page() {
             const productsData = state.productData.data;
             localStorage.setItem('productsData', JSON.stringify(productsData));
         }
-    }, [state.productsData]);
+        const newCartCount = state.cart.cartData.length.toString();
+        setCartCount(newCartCount);
+    }, [state]);
 
     return (
         <div className="page-container">
-            <Header />
+            <Header cartCount={cartCount} />
             {
                 state.productData.isLoading 
                 ?
