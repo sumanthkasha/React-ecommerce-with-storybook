@@ -38,11 +38,13 @@ export const Carousel = ({dots, slidesToShow, slidesToScroll, autoplay, arrows, 
                         />
                     </div>
                     
-                    {element.brand_name && <span className="product__brand"> {element.brand_name} </span>}
-                    {element.description && <span className="product__desc"> {element.description} </span>}
-                    {element.discount && <span className="product__discount"> {element.discount} </span>}
-                    {element.popularity && <span className="product__popularity"> {element.popularity} </span>}
-                    {element.price && <span className="product__price"> {element.price} </span>}
+                    <div className='product__desc-data'>
+                        {element.brand_name && <span className="product__brand"> {element.brand_name} </span>}
+                        {element.description && <span className="product__desc"> {element.description} </span>}
+                        {element.discount && <span className="product__discount"> {element.discount} </span>}
+                        {element.popularity && <span className="product__popularity"> {element.popularity} </span>}
+                        {element.price && <span className="product__price"> {element.price} </span>}
+                    </div>
                 </div>
             ))
         )

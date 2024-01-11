@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct, removeProduct } from "../../../redux/slice/productDataSlice";
+import { addProduct, removeProduct, addProductToCart, removeProductFromCart } from "../../../redux/slice/productDataSlice";
 
 import { Loader } from '../../../stories/molecules/Loader/Loader';
 import { Button } from "../../../stories/atoms/Button/Button";
@@ -18,6 +18,7 @@ const CollectionsPage = () => {
     const [activeSortByPrice, setActiveSortByPrice] = useState(null);
     const [activeSortByDiscount, setActiveSortByDiscount] = useState(null);
     const [wishlistData, setWishListData] = useState({});
+    const [cartData, setCartData] = useState({});
 
     useEffect(() => {
         if (data) {
@@ -27,6 +28,7 @@ const CollectionsPage = () => {
     }, [data]);
 
     useEffect(() => {
+        //wishlist
         for (const productId in wishlistData) {
             if (wishlistData.hasOwnProperty(productId)) {
                 const status = wishlistData[productId];
@@ -37,7 +39,20 @@ const CollectionsPage = () => {
                 }
             }
         }
-    }, [wishlistData, dispatch]);
+
+        //cart
+        for (const productId in cartData) {
+            if (cartData.hasOwnProperty(productId)) {
+                const status = cartData[productId];
+                if (status === "add") {
+                    dispatch(addProductToCart(productId));
+                } 
+                // else if (status === "remove") {
+                //     dispatch(removeProductFromCart(productId));
+                // }
+            }
+        }
+    }, [wishlistData, cartData, dispatch]);
 
     const handleUpdateWishlist = (productId) => {
         setWishListData((prevWishlistData) => {
@@ -48,6 +63,16 @@ const CollectionsPage = () => {
             };
         });
     };
+
+    const handleUpdateCart = (productId) => {
+        setCartData((prevCartData) => {
+            // const newStatus = prevCartData[productId] === "add" ? "remove" : "add";
+            return {
+                ...prevCartData,
+                [productId]: "add",
+            };
+        });
+    }
 
     console.log(useSelector((state) => state));
 
@@ -117,7 +142,6 @@ const CollectionsPage = () => {
                                     <li key={prod.id} className="d-flex flex-column product__product">
                                         <Button
                                             className="product__wishlist"
-                                            value={prod.id}
                                             onClick={() => handleUpdateWishlist(prod.id)}
                                         >
                                             {wishlistData[prod.id.toString()] === 'remove' || !wishlistData[prod.id] ? <CiHeart /> : <FaHeart />}
@@ -128,6 +152,12 @@ const CollectionsPage = () => {
                                         <span className="product__discount"> {prod.discount} </span>
                                         <span className="product__popularity"> {prod.popularity} </span>
                                         <span className="product__price"> {prod.price} </span>
+                                        <Button
+                                            className="product__cart"
+                                            onClick={() => handleUpdateCart(prod.id)}
+                                        >
+                                            {cartData[prod.id.toString()] === 'remove' || !cartData[prod.id] ? "Add to cart" : "Go to Cart"}
+                                        </Button>
                                     </li>
                                 ))}
                         </ul>
