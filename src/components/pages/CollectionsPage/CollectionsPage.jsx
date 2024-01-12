@@ -126,10 +126,10 @@ const CollectionsPage = () => {
                 </ol>
                 <section className="product__sorts d-flex justify-content-end ms-auto">
                     <span className={activeSortByPrice ? "product__sort-by-price active" : "product__sort-by-price"} onClick={sortByPrice}>
-                        sort-by-price
+                        Sort-by-price
                     </span>
                     <span className={activeSortByDiscount ? "product__sort-by-discount active" : "product__sort-by-discount"} onClick={sortByDiscount}>
-                        sort-by-discount
+                        Sort-by-discount
                     </span>
                 </section>
             </section>
@@ -147,11 +147,13 @@ const CollectionsPage = () => {
                                             {wishlistData[prod.id.toString()] === 'remove' || !wishlistData[prod.id] ? <CiHeart /> : <FaHeart />}
                                         </Button>
                                         <img className="product__img" src={"./images/" + prod.image} alt={prod.brand_name + " " + prod.type} />
-                                        <span className="product__brand"> {prod.brand_name} </span>
-                                        <span className="product__desc"> {prod.description} </span>
-                                        <span className="product__discount"> {prod.discount} </span>
-                                        <span className="product__popularity"> {prod.popularity} </span>
-                                        <span className="product__price"> {prod.price} </span>
+                                        <div>
+                                            <span className="product__brand">{prod.brand_name} </span>
+                                            <span className="product__desc"> {prod.description} </span>
+                                        </div>
+                                        <span className="product__discount"> Up to {prod.discount} off</span>
+                                        <span className="product__popularity"> Popularity: {prod.popularity} </span>
+                                        <span className="product__price"> &#8377; {prod.price} </span>
                                         <Button
                                             className="product__cart"
                                             onClick={() => handleUpdateCart(prod.id)}
