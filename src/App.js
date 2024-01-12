@@ -19,7 +19,7 @@ function App() {
           element: <Home />
         },
         {
-          path: "/collections",
+          path: "/collections/:productId",
           element: <CollectionsPage />
         }
       ]

@@ -7,10 +7,12 @@ import { Button } from "../../../stories/atoms/Button/Button";
 import { FaHeart } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import "./CollectionsPage.scss";
+import { useParams } from "react-router-dom";
 
 const CollectionsPage = () => {
     const dispatch = useDispatch();
     const { isLoading, data } = useSelector((state) => state.productData);
+    const params = useParams();
 
     const [productList, setProductList] = useState(data || []);
     const [filteredProductList, setFilteredProductList] = useState(null);
@@ -23,7 +25,7 @@ const CollectionsPage = () => {
     useEffect(() => {
         if (data) {
             setProductList(data);
-            filteredProducts("tshirt");
+            filteredProducts(params.productId);
         }
     }, [data]);
 
@@ -146,7 +148,7 @@ const CollectionsPage = () => {
                                         >
                                             {wishlistData[prod.id.toString()] === 'remove' || !wishlistData[prod.id] ? <CiHeart /> : <FaHeart />}
                                         </Button>
-                                        <img className="product__img" src={"./images/" + prod.image} alt={prod.brand_name + " " + prod.type} />
+                                        <img className="product__img" src={"/images/" + prod.image} alt={prod.brand_name + " " + prod.type} />
                                         <span className="product__brand"> {prod.brand_name} </span>
                                         <span className="product__desc"> {prod.description} </span>
                                         <span className="product__discount"> {prod.discount} </span>
