@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './Carousel.scss';
 
-export const Carousel = ({dots, slidesToShow, slidesToScroll, autoplay, arrows, data, ...props}) => {
+export const Carousel = ({dots, slidesToShow, slidesToScroll, autoplay, arrows, data, imgSource, ...props}) => {
     
     var settings = {
         dots: dots,
@@ -32,7 +32,7 @@ export const Carousel = ({dots, slidesToShow, slidesToScroll, autoplay, arrows, 
                     <div className="cmp__slick-carousel__img-wrapper">
                         <img 
                             className="product__img" 
-                            src={"/images/" + (element.image || "default-image.svg")} 
+                            src={imgSource + (element.image || "default-image.svg")} 
                             alt={element.brand_name || 'Unknown Brand' + " " + element.type || '' } 
                             onError={handleImageError}
                         />
@@ -67,6 +67,7 @@ Carousel.propTypes = {
     dots: PropTypes.bool,
     autoplay: PropTypes.bool,
     arrows: PropTypes.bool,
+    imgSource: PropTypes.string,
 };
 
 Carousel.defaultProps = {
@@ -75,4 +76,5 @@ Carousel.defaultProps = {
     slidesToScroll: 1,
     autoplay: true,
     arrows: true,
+    imgSource: "/images/"
 }
