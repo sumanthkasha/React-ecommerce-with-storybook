@@ -7,7 +7,7 @@ import { Button } from "../../../stories/atoms/Button/Button";
 import { FaHeart } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import "./CollectionsPage.scss";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const CollectionsPage = () => {
     const dispatch = useDispatch();
@@ -142,24 +142,27 @@ const CollectionsPage = () => {
                             {filteredProductList &&
                                 filteredProductList.map((prod) => (
                                     <li key={prod.id} className="d-flex flex-column product__product">
-                                        <Button
-                                            className="product__wishlist"
-                                            onClick={() => handleUpdateWishlist(prod.id)}
-                                        >
-                                            {wishlistData[prod.id.toString()] === 'remove' || !wishlistData[prod.id] ? <CiHeart /> : <FaHeart />}
-                                        </Button>
-                                        <img className="product__img" src={"/images/" + prod.image} alt={prod.brand_name + " " + prod.type} />
-                                        <span className="product__brand"> {prod.brand_name} </span>
-                                        <span className="product__desc"> {prod.description} </span>
-                                        <span className="product__discount"> {prod.discount} </span>
-                                        <span className="product__popularity"> {prod.popularity} </span>
-                                        <span className="product__price"> {prod.price} </span>
+                                        <Link to={`/productDetails/${prod.type}/${prod.id}`} className="d-flex flex-column">
+                                            <Button
+                                                className="product__wishlist"
+                                                onClick={() => handleUpdateWishlist(prod.id)}
+                                            >
+                                                {wishlistData[prod.id.toString()] === 'remove' || !wishlistData[prod.id] ? <CiHeart /> : <FaHeart />}
+                                            </Button>
+                                            <img className="product__img" src={"/images/" + prod.image} alt={prod.brand_name + " " + prod.type} />
+                                            <span className="product__brand"> {prod.brand_name} </span>
+                                            <span className="product__desc"> {prod.description} </span>
+                                            <span className="product__discount"> {prod.discount} </span>
+                                            <span className="product__popularity"> {prod.popularity} </span>
+                                            <span className="product__price"> {prod.price} </span>
+                                        </Link>
                                         <Button
                                             className="product__cart"
                                             onClick={() => handleUpdateCart(prod.id)}
                                         >
                                             {cartData[prod.id.toString()] === 'remove' || !cartData[prod.id] ? "Add to cart" : "Go to Cart"}
                                         </Button>
+                                        
                                     </li>
                                 ))}
                         </ul>
