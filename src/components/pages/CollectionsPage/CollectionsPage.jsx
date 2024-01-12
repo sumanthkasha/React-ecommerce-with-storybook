@@ -7,10 +7,12 @@ import { Button } from "../../../stories/atoms/Button/Button";
 import { FaHeart } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import "./CollectionsPage.scss";
+import { Link, useParams } from "react-router-dom";
 
 const CollectionsPage = () => {
     const dispatch = useDispatch();
     const { isLoading, data } = useSelector((state) => state.productData);
+    const params = useParams();
 
     const [productList, setProductList] = useState(data || []);
     const [filteredProductList, setFilteredProductList] = useState(null);
@@ -23,7 +25,7 @@ const CollectionsPage = () => {
     useEffect(() => {
         if (data) {
             setProductList(data);
-            filteredProducts("tshirt");
+            filteredProducts(params.productId);
         }
     }, [data]);
 
@@ -140,26 +142,27 @@ const CollectionsPage = () => {
                             {filteredProductList &&
                                 filteredProductList.map((prod) => (
                                     <li key={prod.id} className="d-flex flex-column product__product">
-                                        <Button
-                                            className="product__wishlist"
-                                            onClick={() => handleUpdateWishlist(prod.id)}
-                                        >
-                                            {wishlistData[prod.id.toString()] === 'remove' || !wishlistData[prod.id] ? <CiHeart /> : <FaHeart />}
-                                        </Button>
-                                        <img className="product__img" src={"./images/" + prod.image} alt={prod.brand_name + " " + prod.type} />
-                                        <div>
-                                            <span className="product__brand">{prod.brand_name} </span>
+                                            <Button
+                                                className="product__wishlist"
+                                                onClick={() => handleUpdateWishlist(prod.id)}
+                                            >
+                                                {wishlistData[prod.id.toString()] === 'remove' || !wishlistData[prod.id] ? <CiHeart /> : <FaHeart />}
+                                            </Button>
+                                        <Link to={`/productDetails/${prod.type}/${prod.id}`} className="d-flex flex-column">
+                                            <img className="product__img" src={"/images/" + prod.image} alt={prod.brand_name + " " + prod.type} />
+                                            <span className="product__brand"> {prod.brand_name} </span>
                                             <span className="product__desc"> {prod.description} </span>
-                                        </div>
-                                        <span className="product__discount"> Up to {prod.discount} off</span>
-                                        <span className="product__popularity"> Popularity: {prod.popularity} </span>
-                                        <span className="product__price"> &#8377; {prod.price} </span>
+                                            <span className="product__discount"> Up to {prod.discount} off</span>
+                                            <span className="product__popularity"> Popularity: {prod.popularity} </span>
+                                            <span className="product__price"> &#8377; {prod.price} </span>
+                                        </Link>
                                         <Button
                                             className="product__cart"
                                             onClick={() => handleUpdateCart(prod.id)}
                                         >
                                             {cartData[prod.id.toString()] === 'remove' || !cartData[prod.id] ? "Add to cart" : "Go to Cart"}
                                         </Button>
+                                        
                                     </li>
                                 ))}
                         </ul>
