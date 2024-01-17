@@ -33,6 +33,15 @@ export default function Page() {
         window.scroll({top:0 , left:0, behavior: 'smooth'});
     }
 
+    function hideSearchResults() {
+        
+        const searchResultsElement = document.getElementsByClassName("cmp-search__results");
+        
+        for (let i = 0; i < searchResultsElement.length; i++) {
+            searchResultsElement[i].classList.add("d-none");
+        }
+    }
+
     return (
         <div className="page-container">
             <Header cartCount={cartCount} />
@@ -42,11 +51,11 @@ export default function Page() {
                     <Loader />
                 :
                     !state.productData.isError ? 
-                    <>
+                    <div onClick={hideSearchResults}>
                         <Outlet />
                         <Button className="backToTopButton"onClick={handlebackToTop}> Back to top </Button>
                         <Footer />
-                    </>
+                    </div>
                     : <Error serverError={true} />
 
             }

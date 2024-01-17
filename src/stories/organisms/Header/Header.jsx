@@ -10,7 +10,7 @@ import BannerImg from "../../../assets/images/TA_logo.svg";
 
 import "./Header.scss";
 
-export const Header = ({cartCount}) => {
+export const Header = ({cartCount, ...props}) => {
     
     return (
         <header className="header">
