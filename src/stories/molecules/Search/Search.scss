@@ -1,8 +1,51 @@
+@import '../../../assets/base.scss';
+
 .cmp-search {
+    position: relative;
+
     .btn {
         svg {
             position: relative;
-            top: -1px;
+            top: pxToRem(-1px);
+        }
+    }
+
+    &__results {
+        position: absolute;
+        top: 3rem;
+        z-index: 10;
+        color: $black;
+        background-color: $white;
+        padding: pxToRem(8px);
+        max-width: pxToRem(350px);
+        overflow: hidden;
+
+        &:empty {
+            display: none;
+        }
+
+        &:not(:empty) {
+            display: block;
+        }
+
+        li {
+            list-style-type: none;
+            padding: pxToRem(4px);
+            border-bottom: 1px solid $black;
+            cursor: pointer;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;   
+            text-overflow: ellipsis; 
+
+            &:last-child {
+                border-bottom: 0;
+            }
+
+            a {
+                color: $black;
+                text-decoration: none;
+            }
         }
     }
 }
