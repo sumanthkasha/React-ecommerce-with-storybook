@@ -30,7 +30,7 @@ export default function Page() {
 
     return (
         <div className="page-container">
-            <Header cartCount={cartCount} />
+            <Header cartCount={cartCount} searchData={!state.productData.isError ? state.productData.data : []} />
             {
                 state.productData.isLoading 
                 ?

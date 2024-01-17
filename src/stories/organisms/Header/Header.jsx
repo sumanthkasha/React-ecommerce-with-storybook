@@ -10,7 +10,7 @@ import BannerImg from "../../../assets/images/TA_logo.svg";
 
 import "./Header.scss";
 
-export const Header = ({cartCount}) => {
+export const Header = ({cartCount, searchData}) => {
     
     return (
         <header className="header">
@@ -23,7 +23,7 @@ export const Header = ({cartCount}) => {
                             </NavLink>
                         </div>
 
-                        <Search className="d-flex nav-bar__search nav-bar__search--tablet px-4" placeholder="Search" />
+                        <Search className="d-flex nav-bar__search nav-bar__search--tablet px-4" data={searchData} placeholder="Search" />
 
                         <Button
                             className="navbar-toggler"
