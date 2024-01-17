@@ -128,10 +128,10 @@ const CollectionsPage = () => {
                 </ol>
                 <section className="product__sorts d-flex justify-content-end ms-auto">
                     <span className={activeSortByPrice ? "product__sort-by-price active" : "product__sort-by-price"} onClick={sortByPrice}>
-                        sort-by-price
+                        Sort-by-price
                     </span>
                     <span className={activeSortByDiscount ? "product__sort-by-discount active" : "product__sort-by-discount"} onClick={sortByDiscount}>
-                        sort-by-discount
+                        Sort-by-discount
                     </span>
                 </section>
             </section>
@@ -142,19 +142,19 @@ const CollectionsPage = () => {
                             {filteredProductList &&
                                 filteredProductList.map((prod) => (
                                     <li key={prod.id} className="d-flex flex-column product__product">
-                                        <Link to={`/productDetails/${prod.type}/${prod.id}`} className="d-flex flex-column">
                                             <Button
                                                 className="product__wishlist"
                                                 onClick={() => handleUpdateWishlist(prod.id)}
                                             >
                                                 {wishlistData[prod.id.toString()] === 'remove' || !wishlistData[prod.id] ? <CiHeart /> : <FaHeart />}
                                             </Button>
+                                        <Link to={`/productDetails/${prod.type}/${prod.id}`} className="d-flex flex-column">
                                             <img className="product__img" src={"/images/" + prod.image} alt={prod.brand_name + " " + prod.type} />
                                             <span className="product__brand"> {prod.brand_name} </span>
                                             <span className="product__desc"> {prod.description} </span>
-                                            <span className="product__discount"> {prod.discount} </span>
-                                            <span className="product__popularity"> {prod.popularity} </span>
-                                            <span className="product__price"> {prod.price} </span>
+                                            <span className="product__discount"> Up to {prod.discount} off</span>
+                                            <span className="product__popularity"> Popularity: {prod.popularity} </span>
+                                            <span className="product__price"> &#8377; {prod.price} </span>
                                         </Link>
                                         <Button
                                             className="product__cart"
