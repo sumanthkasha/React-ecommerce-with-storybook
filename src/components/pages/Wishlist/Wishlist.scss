@@ -1,0 +1,9 @@
+@import '../../../assets/base.scss';
+
+.cmp-wishlist {
+    flex-wrap: wrap;
+    
+    &__item {
+        list-style-type: none;
+    }
+}

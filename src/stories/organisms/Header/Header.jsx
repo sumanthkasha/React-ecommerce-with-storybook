@@ -45,7 +45,7 @@ export const Header = ({cartCount, ...props}) => {
                                 <NavLink
                                     className="nav-link d-flex align-items-center"
                                     aria-current="page"
-                                    to="/link"
+                                    to="/wishlist"
                                     title="Wishlist"
                                 >
                                     <FaHeart />
