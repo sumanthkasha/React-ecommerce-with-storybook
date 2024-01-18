@@ -4,6 +4,7 @@ import Page from './components/pages/Page';
 import Home from './components/pages/HomePage/HomePage';
 import CollectionsPage from './components/pages/CollectionsPage/CollectionsPage';
 import ProductDetails from './components/organisms/ProductDetails/ProductDetails';
+import Wislist from './components/pages/Wishlist/Wishlist';
 import { Error } from './stories/pages/Error/Error';
 
 import './App.css';
@@ -26,6 +27,10 @@ function App() {
         {
           path: "/productDetails/:productType/:productId",
           element: <ProductDetails />
+        },
+        {
+          path: "/wishlist",
+          element: <Wislist />
         }
       ]
 
