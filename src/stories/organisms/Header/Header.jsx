@@ -56,7 +56,7 @@ export const Header = ({cartCount, ...props}) => {
                                 <NavLink
                                     className="nav-link d-flex align-items-center"
                                     aria-current="page"
-                                    to="/"
+                                    to="/cart"
                                     title="Go to cart"
                                 >
                                     <span className="nav-link__cart-count"> {cartCount} </span>
