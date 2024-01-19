@@ -19,6 +19,21 @@
         }
     }
 
+    &__wishlist {
+        .ci-heart, .fa-heart {
+            font-size: 20px;
+        }
+        .ci-heart {
+            color: $black;
+            &:hover {
+                color: $red;
+            }
+        }
+        .fa-heart {
+            color: $red;
+        }
+    }
+
     &__filtered {
         // width: 80%;
         background: $white;

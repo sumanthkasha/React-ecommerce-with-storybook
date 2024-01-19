@@ -11,7 +11,23 @@ import { Link, useParams } from "react-router-dom";
 
 const CollectionsPage = () => {
     const dispatch = useDispatch();
-    const { isLoading, data } = useSelector((state) => state.productData);
+    //const { isLoading, data } = useSelector((state) => state.productData);
+    const state = useSelector((state) => state);
+    const isLoading = state.isLoading;
+    const data = state.productData.data;
+    const wishlist = state.wishlist.wishlistData;
+    const cart = state.cart.cartData;
+
+    const wishlistTransformedObject = wishlist.reduce((acc, current) => {
+        acc[current] = "add";
+        return acc;
+    }, {});
+
+    const cartTransformedObject = cart.reduce((acc, current) => {
+        acc[current] = "add";
+        return acc;
+    }, {});
+
     const params = useParams();
 
     const [productList, setProductList] = useState(data || []);
@@ -27,6 +43,8 @@ const CollectionsPage = () => {
             setProductList(data);
             filteredProducts(params.productId);
         }
+        setWishListData(wishlistTransformedObject);
+        setCartData(cartTransformedObject);
     }, [data]);
 
     useEffect(() => {
@@ -75,8 +93,6 @@ const CollectionsPage = () => {
             };
         });
     }
-
-    console.log(useSelector((state) => state));
 
     const filteredProducts = (data = "tshirt") => {
         const renderedProducts = productList.filter((product) => product.type === data);
@@ -146,7 +162,7 @@ const CollectionsPage = () => {
                                                 className="product__wishlist"
                                                 onClick={() => handleUpdateWishlist(prod.id)}
                                             >
-                                                {wishlistData[prod.id.toString()] === 'remove' || !wishlistData[prod.id] ? <CiHeart /> : <FaHeart />}
+                                                {wishlistData[prod.id.toString()] === 'remove' || !wishlistData[prod.id] ? <CiHeart className="ci-heart" /> : <FaHeart className="fa-heart" />}
                                             </Button>
                                         <Link to={`/productDetails/${prod.type}/${prod.id}`} className="d-flex flex-column">
                                             <img className="product__img" src={"/images/" + prod.image} alt={prod.brand_name + " " + prod.type} />

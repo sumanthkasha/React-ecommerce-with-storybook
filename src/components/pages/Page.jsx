@@ -23,10 +23,23 @@ export default function Page() {
     useEffect(() => {
         if (!state.productData.isLoading) {
             const productsData = state.productData.data;
-            localStorage.setItem('productsData', JSON.stringify(productsData));
+            const wishlistData = state.wishlist.wishlistData || [];
+            const cartData = state.cart.cartData || [];
+    
+            if (productsData && productsData.length > 0) {
+                localStorage.setItem('productsData', JSON.stringify(productsData));
+            }
+    
+            if (wishlistData && wishlistData.length > 0) {
+                localStorage.setItem('wishlistData', JSON.stringify(wishlistData));
+            }
+    
+            if (cartData && cartData.length > 0) {
+                localStorage.setItem('cartData', JSON.stringify(cartData));
+                const newCartCount = cartData.length.toString();
+                setCartCount(newCartCount);
+            }
         }
-        const newCartCount = state.cart.cartData.length.toString();
-        setCartCount(newCartCount);
     }, [state]);
 
     function handlebackToTop() {

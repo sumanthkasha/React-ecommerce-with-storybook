@@ -32,4 +32,23 @@
             text-decoration: underline;
         }
     }
+    
+    &__empty {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    &__text {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 991px) {
+        &__text {
+            font-size: 14px;
+        }
+    }
 }
