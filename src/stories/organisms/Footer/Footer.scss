@@ -11,7 +11,7 @@
     background-color: $dark-blue-gray;
     color: $gray-200;
     z-index: 99;
-
+    margin-top: auto;
     @media screen and (max-width: 991px){
         font-size: 10px;
         // position: relative;

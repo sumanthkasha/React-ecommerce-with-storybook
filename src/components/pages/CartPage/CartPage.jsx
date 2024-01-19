@@ -22,7 +22,7 @@ const CartPage = () => {
     console.log(cartProducts);
 
     return (
-        <section>
+        <section className="cmp-cart-container">
             {cartProducts.length > 0 ?
                 (
                     <ul className="cmp-cart d-flex">

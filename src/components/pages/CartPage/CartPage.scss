@@ -1,5 +1,10 @@
 @import '../../../assets/base.scss';
 
+.cmp-cart-container{
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+}
 .cmp-cart {
     flex-wrap: wrap;
     padding: 0 32px;
