@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 import DefaultImage from '../../../assets/images/default-image.svg';
 
 import { Button } from "../../atoms/Button/Button";
@@ -7,14 +8,6 @@ import './Card.scss';
 
 export const ProductCard = ({image, brand_name, description, popularity, price, discount, addToCartButton, data, ...props}) => {
 
-    var productData = {
-        image: image,
-        brand_name: brand_name,
-        description: description,
-        popularity: popularity,
-        price: price,
-        discount: discount
-    }
     function handleImageError(event) {
         event.target.src = DefaultImage;
     }
@@ -31,7 +24,7 @@ export const ProductCard = ({image, brand_name, description, popularity, price, 
             {
                 addToCartButton && 
                 <Button primary={true} size={"large"}>
-                    Add to Cart
+                    <Link to="/cart" relative="path">Add to Cart</Link>
                 </Button>
 
             }
