@@ -34,11 +34,12 @@ export default function Wislist() {
                     {wishlistProducts.map((product) => (
                         <li key={product.id} className="cmp-wishlist__item">
                             <ProductCard 
-                                image={"/images/"+product.image} 
+                                image={product.image} 
                                 brand_name={product.brand_name} 
                                 description={product.description}
                                 price={product.price}
                                 discount={product.discount}
+                                
                             />
                         </li>
                     ))}
