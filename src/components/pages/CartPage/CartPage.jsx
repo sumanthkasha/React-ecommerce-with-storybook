@@ -42,10 +42,12 @@ const CartPage = () => {
 
                 ) :
                 (
-                    <h2 >Your Cart is empty.</h2>
+                    <section className="cmp-cart__empty">
+                        <h2 className="cmp-cart__text">Your Cart is empty.</h2>
+                        <Link to={"/collections/tshirt"} className="cmp-cart__link"> Continue Shopping</Link>
+                    </section>
                 )
             }
-            <Link to={"/collections/tshirt"} className="cmp-cart__link"> Continue Shopping</Link>
         </section>
     )
 }
