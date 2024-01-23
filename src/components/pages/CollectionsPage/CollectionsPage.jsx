@@ -136,6 +136,16 @@ const CollectionsPage = () => {
         setActiveSortByDiscount(true);
     };
 
+    const handleSelectChange = (e) => {
+        const selectedValue = e.target.value;
+    
+        if (selectedValue === 'sort-by-price') {
+          sortByPrice();
+        } else if (selectedValue === 'sort-by-discount') {
+          sortByDiscount();
+        }
+    };
+
     return (
         <div className="d-flex flex-column px-2">
             <section className="d-flex align-items-center product__categories">
@@ -143,12 +153,21 @@ const CollectionsPage = () => {
                     {productList && filterCategories()}
                 </ol>
                 <section className="product__sorts d-flex justify-content-end ms-auto">
-                    <span className={activeSortByPrice ? "product__sort-by-price active" : "product__sort-by-price"} onClick={sortByPrice}>
-                        Sort-by-price
-                    </span>
-                    <span className={activeSortByDiscount ? "product__sort-by-discount active" : "product__sort-by-discount"} onClick={sortByDiscount}>
-                        Sort-by-discount
-                    </span>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm" onChange={handleSelectChange}>
+                        <option value="filter">Sort By</option>
+                        <option
+                            value="sort-by-price"
+                            className={activeSortByPrice ? "active" : ""}
+                        >
+                            Price
+                        </option>
+                        <option
+                            value="sort-by-discount"
+                            className={activeSortByDiscount ? "active" : ""}
+                        >
+                            Discount
+                        </option>
+                    </select>
                 </section>
             </section>
             <main className="product__filtered">
@@ -158,12 +177,12 @@ const CollectionsPage = () => {
                             {filteredProductList &&
                                 filteredProductList.map((prod) => (
                                     <li key={prod.id} className="d-flex flex-column product__product">
-                                            <Button
-                                                className="product__wishlist"
-                                                onClick={() => handleUpdateWishlist(prod.id)}
-                                            >
-                                                {wishlistData[prod.id.toString()] === 'remove' || !wishlistData[prod.id] ? <CiHeart className="ci-heart" /> : <FaHeart className="fa-heart" />}
-                                            </Button>
+                                        <Button
+                                            className="product__wishlist"
+                                            onClick={() => handleUpdateWishlist(prod.id)}
+                                        >
+                                            {wishlistData[prod.id.toString()] === 'remove' || !wishlistData[prod.id] ? <CiHeart className="ci-heart" /> : <FaHeart className="fa-heart" />}
+                                        </Button>
                                         <Link to={`/productDetails/${prod.type}/${prod.id}`} className="d-flex flex-column">
                                             <img className="product__img" src={"/images/" + prod.image} alt={prod.brand_name + " " + prod.type} />
                                             <span className="product__brand"> {prod.brand_name} </span>
@@ -178,7 +197,6 @@ const CollectionsPage = () => {
                                         >
                                             {cartData[prod.id.toString()] === 'remove' || !cartData[prod.id] ? "Add to cart" : "Go to Cart"}
                                         </Button>
-                                        
                                     </li>
                                 ))}
                         </ul>

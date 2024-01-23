@@ -25,7 +25,6 @@ export default function Wislist() {
 
     return (
         <section className="cmp-wishlist-container">
-            <Link to="/collections/tshirt" relative="path"className="cmp-wishlist__link">Go to Collections</Link>
             
             {
                 state.productData.data && wishlistProducts.length>0
@@ -47,6 +46,7 @@ export default function Wislist() {
                 :
                 <section className="cmp-wishlist__empty">
                     <h1 className="cmp-wishlist__text">Wishlist is empty</h1>
+                    <Link to="/collections/tshirt" relative="path"className="cmp-wishlist__link">Go to Collections</Link>
                 </section>
             }
         </section>

@@ -19,6 +19,23 @@
         }
     }
 
+    &__sorts {
+        select {
+            font-size: 14px;
+            position: relative;
+            max-width: pxToRem(120px);
+            
+            @media screen and (max-width: 992px) {
+                max-width: pxToRem(80px);
+            }
+
+            option {
+                max-width: pxToRem(90px);
+                font-size: 12px;
+            }
+        }
+    }
+
     &__wishlist {
         .ci-heart, .fa-heart {
             font-size: 20px;
