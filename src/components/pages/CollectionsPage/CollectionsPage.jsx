@@ -37,6 +37,7 @@ const CollectionsPage = () => {
     const [activeSortByDiscount, setActiveSortByDiscount] = useState(null);
     const [wishlistData, setWishListData] = useState({});
     const [cartData, setCartData] = useState({});
+    const [addedToCart, setAddedToCart] = useState({});
 
     useEffect(() => {
         if (data) {
@@ -92,6 +93,11 @@ const CollectionsPage = () => {
                 [productId]: "add",
             };
         });
+        setAddedToCart((prevAddedToCart) => ({
+            ...prevAddedToCart,
+            [productId]: true,
+        }));
+        // window.location.href = "/cart";
     }
 
     const filteredProducts = (data = "tshirt") => {
