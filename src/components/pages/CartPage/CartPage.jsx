@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeProductFromCart } from "../../../redux/slice/productDataSlice";
+import { addProductToCart,removeProductFromCart } from "../../../redux/slice/productDataSlice";
 import { Link } from "react-router-dom";
 
 import { ProductCard } from "../../../stories/molecules/Card/Card";
+import { Button } from "../../../stories/atoms/Button/Button";
 import './CartPage.scss'
 
 const CartPage = () => {
@@ -36,6 +37,9 @@ const CartPage = () => {
                                     discount={product.discount}
                                     addToCartButton={false}
                                 />
+                                <Button className="cmp-cart__buy-now" >
+                                    <Link to="/" >Buy Now</Link>
+                                </Button>
                             </li>
                         ))}
                     </ul>
@@ -47,6 +51,7 @@ const CartPage = () => {
                         <Link to={"/collections/tshirt"} className="cmp-cart__link"> Continue Shopping</Link>
                     </section>
                 )
+                                        
             }
         </section>
     )

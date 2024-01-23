@@ -37,6 +37,7 @@ const CollectionsPage = () => {
     const [activeSortByDiscount, setActiveSortByDiscount] = useState(null);
     const [wishlistData, setWishListData] = useState({});
     const [cartData, setCartData] = useState({});
+    const [addedToCart, setAddedToCart] = useState({});
 
     useEffect(() => {
         if (data) {
@@ -92,6 +93,11 @@ const CollectionsPage = () => {
                 [productId]: "add",
             };
         });
+        setAddedToCart((prevAddedToCart) => ({
+            ...prevAddedToCart,
+            [productId]: true,
+        }));
+        // window.location.href = "/cart";
     }
 
     const filteredProducts = (data = "tshirt") => {
@@ -191,11 +197,18 @@ const CollectionsPage = () => {
                                             <span className="product__popularity"> Popularity: {prod.popularity} </span>
                                             <span className="product__price"> &#8377; {prod.price} </span>
                                         </Link>
-                                        <Button
+                                        {/* <Button
                                             className="product__cart"
                                             onClick={() => handleUpdateCart(prod.id)}
                                         >
                                             {cartData[prod.id.toString()] === 'remove' || !cartData[prod.id] ? "Add to cart" : "Go to Cart"}
+                                        </Button> */}
+                                        <Button className="product__cart">
+                                            {addedToCart[prod.id] ? (
+                                                <Link to="/cart">Go to Cart</Link>
+                                            ):(
+                                                <span onClick={() => handleUpdateCart(prod.id)}>Add to Cart</span>
+                                            )}
                                         </Button>
                                     </li>
                                 ))}

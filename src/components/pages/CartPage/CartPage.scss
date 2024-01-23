@@ -13,6 +13,13 @@
         list-style-type: none;
         max-width: 100%;
         width: 100%;
+        border: 1px solid #e0e0e0;
+        background-color: #fff;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+
 
         @media (min-width:768px){
             max-width: 33.3%;
@@ -24,6 +31,7 @@
 
         .card{
             padding-bottom: 10px;
+            border: none;
         }
     }
 
@@ -49,6 +57,19 @@
     &__text {
         font-size: 32px;
         text-align: center;
+    }
+    
+    &__buy-now{
+        border-radius: 100px;
+        padding: 0.25rem;
+        border: none;
+        background-color: #007185;
+        width: 150px;
+
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
     }
 
     @media screen and (max-width: 991px) {

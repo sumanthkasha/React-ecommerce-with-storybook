@@ -22,13 +22,13 @@ export const ProductCard = ({image, brand_name, description, popularity, price, 
             {popularity && <span className="product__popularity"> Popularity: {popularity} </span>}
             {price && <span className="product__price"> &#8377; {price} </span>}
 
-            {
+            {/* {
                 addToCartButton && 
                 <Button primary={true} size={"large"}>
                     <Link to="/cart" relative="path">Add to Cart</Link>
                 </Button>
 
-            }
+            } */}
         </section>
     );
 };
@@ -41,7 +41,7 @@ ProductCard.propTypes = {
     popularity: PropTypes.string,
     price: PropTypes.string,
     discount: PropTypes.string,
-    addToCartButton: PropTypes.bool,
+    // addToCartButton: PropTypes.bool,
 };
 
 ProductCard.defaultProps = {
@@ -51,5 +51,5 @@ ProductCard.defaultProps = {
     popularity:'' ,
     price: '',
     discount: '',
-    addToCartButton: true
+    // addToCartButton: true
 }
