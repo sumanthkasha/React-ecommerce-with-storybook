@@ -14,6 +14,13 @@
         list-style-type: none;
         max-width: 100%;
         width: 100%;
+        background: white;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
 
         @media (min-width:768px){
             max-width: 33.3%;
@@ -25,6 +32,7 @@
 
         .card{
             padding-bottom: 20px;
+            border: none;
         }
     }
 
@@ -38,7 +46,17 @@
             text-decoration: underline;
         }
     }
-    
+
+    &__cart{
+        border-radius: 100px;
+        padding: 0.25rem;
+        border: none;
+        background-color: #007185;
+        color: #fff;
+        width: 150px;
+    }
+
+
     &__empty {
         display: flex;
         flex-direction: column;

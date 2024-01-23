@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch} from "react-redux";
 import { Link } from "react-router-dom";
 
 import { ProductCard } from "../../../stories/molecules/Card/Card";
 import './Wishlist.scss';
+import { Button } from "../../../stories/atoms/Button/Button";
+import { addProduct, removeProduct, addProductToCart, removeProductFromCart } from "../../../redux/slice/productDataSlice";
 
 export default function Wislist() {
     const state = useSelector((state) => state);
+    const dispatch = useDispatch();
     const [wishlistProducts, setWishlistProducts] = useState([]);
+    const [cartData, setCartData] = useState({});
 
+    
     // const [wishlistProducts, setWishlistProducts] = useState(
     //     JSON.parse(localStorage.getItem('wishlistData')) || []
     // );
@@ -22,7 +27,26 @@ export default function Wislist() {
         }
     }, [state.wishlist.wishlistData, state.productData.data]);
 
+    useEffect(() => {
+        for (const productId in cartData) {
+            if (cartData.hasOwnProperty(productId)) {
+              const status = cartData[productId];
+              if (status === "add") {
+                  dispatch(addProductToCart(productId));
+              }
+            }
+        }
+      }, [state.wishlist.wishlistData, cartData, dispatch]);
 
+    const handleUpdateCart = (productId) => {
+        setCartData((prevCartData) => {
+          return {
+            ...prevCartData,
+            [productId]: "add",
+          };
+        });
+      };
+    
     return (
         <section className="cmp-wishlist-container">
             
@@ -40,6 +64,12 @@ export default function Wislist() {
                                 discount={product.discount}
                                 
                             />
+                            <Button
+                                className="cmp-wishlist__cart"
+                                onClick={() =>  handleUpdateCart(product.id)}
+                            >
+                            Add to cart
+                            </Button>
                         </li>
                     ))}
                 </ul>
