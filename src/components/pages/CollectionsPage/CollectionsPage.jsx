@@ -159,7 +159,7 @@ const CollectionsPage = () => {
                     {productList && filterCategories()}
                 </ol>
                 <section className="product__sorts d-flex justify-content-end ms-auto">
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm" onChange={handleSelectChange}>
+                    <select className="form-select form-select-sm" aria-label=".form-select-sm" onChange={handleSelectChange}>
                         <option value="filter">Sort By</option>
                         <option
                             value="sort-by-price"
