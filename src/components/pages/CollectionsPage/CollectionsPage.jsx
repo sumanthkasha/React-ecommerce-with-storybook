@@ -197,19 +197,14 @@ const CollectionsPage = () => {
                                             <span className="product__popularity"> Popularity: {prod.popularity} </span>
                                             <span className="product__price"> &#8377; {prod.price} </span>
                                         </Link>
-                                        {/* <Button
+                                        {cartData[prod.id.toString()] === 'remove' || !cartData[prod.id] ? <Button
                                             className="product__cart"
                                             onClick={() => handleUpdateCart(prod.id)}
-                                        >
-                                            {cartData[prod.id.toString()] === 'remove' || !cartData[prod.id] ? "Add to cart" : "Go to Cart"}
-                                        </Button> */}
-                                        <Button className="product__cart">
-                                            {addedToCart[prod.id] ? (
-                                                <Link to="/cart">Go to Cart</Link>
-                                            ):(
-                                                <span onClick={() => handleUpdateCart(prod.id)}>Add to Cart</span>
-                                            )}
-                                        </Button>
+                                        > Add to Cart
+                                        </Button> : <Button
+                                            className="product__cart go-to-cart"
+                                        > <Link to="/cart" relative="path">Go to Cart</Link>
+                                        </Button>}
                                     </li>
                                 ))}
                         </ul>

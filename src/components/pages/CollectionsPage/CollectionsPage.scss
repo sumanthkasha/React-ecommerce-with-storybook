@@ -67,8 +67,8 @@
                 color: #fff;
                 width: 150px;
 
-                a{
-                    color: #fff !important;
+                &.go-to-cart a {
+                    color: $white;
                 }
             }
 
