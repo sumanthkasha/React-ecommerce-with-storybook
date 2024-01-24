@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import DefaultImage from '../../../assets/images/default-image.svg';
 
 import { ImageCmp } from "../../../stories/atoms/Image/ImageCmp";
+import { QuantityCounter } from "../../atoms/Counter/QuantityCounter";
 import { Button } from "../../atoms/Button/Button";
 import './Card.scss';
 
-export const ProductCard = ({image, brand_name, description, popularity, price, discount, addToCartButton, data, ...props}) => {
+export const ProductCard = ({image, brand_name, description, popularity, price, discount, addToCartButton, data, counter, linkTo, ...props}) => {
 
     function handleImageError(event) {
         event.target.src = DefaultImage;
@@ -16,11 +17,16 @@ export const ProductCard = ({image, brand_name, description, popularity, price, 
     return(
         <section className="card">
             <ImageCmp src={image || DefaultImage} alt={brand_name || 'Unknown Brand'} onError={handleImageError} figcaption={""} />
-            {brand_name && <span className="product__brand"> {brand_name} </span>}
-            {description && <span className="product__desc"> {description} </span>}
-            {discount && <span className="product__discount"> Up to {discount} </span>}
-            {popularity && <span className="product__popularity"> Popularity: {popularity} </span>}
-            {price && <span className="product__price"> &#8377; {price} </span>}
+            <div className="card__details">
+                <Link to={linkTo} relative="path" className="d-flex flex-column">
+                    {brand_name && <span className="product__brand"> {brand_name} </span>}
+                    {description && <span className="product__desc"> {description} </span>}
+                    {discount && <span className="product__discount"> Up to {discount} </span>}
+                    {popularity && <span className="product__popularity"> Popularity: {popularity} </span>}
+                    {price && <span className="product__price"> &#8377; {price} </span>}
+                </Link>
+                {counter && <QuantityCounter />}
+            </div>
 
             {/* {
                 addToCartButton && 
@@ -41,6 +47,8 @@ ProductCard.propTypes = {
     popularity: PropTypes.string,
     price: PropTypes.string,
     discount: PropTypes.string,
+    counter: PropTypes.bool,
+    linkTo: PropTypes.string,
     // addToCartButton: PropTypes.bool,
 };
 
@@ -51,5 +59,7 @@ ProductCard.defaultProps = {
     popularity:'' ,
     price: '',
     discount: '',
+    counter: false,
+    linkTo: "#"
     // addToCartButton: true
 }

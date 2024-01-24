@@ -10,6 +10,11 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
   text-overflow: ellipsis;
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+  }
  
   img {
     width: 100%;
@@ -24,6 +29,7 @@
   .product__popularity,
   .product__price{
     max-width: 100%;
+    color: $black;
   }
 
   .product__brand {
@@ -52,7 +58,7 @@
   }
 
   .product__discount{
-    color: red;
+    color: $red;
   }
  
   .product__price {
