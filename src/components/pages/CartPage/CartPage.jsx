@@ -11,6 +11,7 @@ const CartPage = () => {
     const state = useSelector((state) => state);
     const [cartProducts, setCartlistProducts] = useState([]);
     const [selectedProducts, setSelectedProducts] = useState([]);
+    const [showPopup,setShowPopup] = useState(false);
 
     useEffect(() => {
         if (state.cart.cartData && state.productData.data) {
@@ -38,6 +39,14 @@ const CartPage = () => {
         } else {
           setSelectedProducts((prevSelected) => [...prevSelected, { id: product.id, price: product.price }]);
         }
+    };
+
+    const handleProceedToBuy= () => {
+        setShowPopup(true);
+    };
+
+    const handleClosePopup = () => {
+        setShowPopup(false);
     };
 
     return (
@@ -76,8 +85,19 @@ const CartPage = () => {
                                 <span className="cmp-cart__total-price"> {selectedProducts.reduce((sum, ele) => sum + ele.price, 0)} </span> 
                             </span>
 
-                            <Link to="#" className="cmp-cart__proceed-to-buy" >Proceed to Buy</Link>
+                            <Button  className="cmp-cart__proceed-to-buy" onClick={handleProceedToBuy}>
+                                Proceed to Buy
+                            </Button>
                         </div>
+                        {showPopup && (
+                            <div className="cmp-cart__popup">
+                                <div className="cmp-cart__popup__content">
+                                    <span className="cmp-cart__popup__close" onClick={handleClosePopup}> &times; </span>
+                                    <p>Thankyou for buying!</p>
+                                    <Link to={"/collections/tshirt"} className="cmp-cart__link"> Continue Shopping</Link>
+                                </div>
+                            </div>
+                        )} 
                     </>
                 ) :
                 (
