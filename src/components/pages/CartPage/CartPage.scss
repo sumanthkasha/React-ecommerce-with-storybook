@@ -163,6 +163,7 @@
     &__proceed-to-buy {
         padding: pxToRem(8px);
         text-decoration: none;
+        border: 0;
         border-radius: pxToRem(8px);
         margin-left: pxToRem(16px);
         background: $yellow;
