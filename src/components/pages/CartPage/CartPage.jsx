@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { ProductCard } from "../../../stories/molecules/Card/Card";
-import { QuantityCounter } from '../../../stories/atoms/Counter/QuantityCounter';
+import { Button } from "../../../stories/atoms/Button/Button";
 import './CartPage.scss'
 
 const CartPage = () => {
