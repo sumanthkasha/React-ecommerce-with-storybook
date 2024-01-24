@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { addProductToCart,removeProductFromCart } from "../../../redux/slice/productDataSlice";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { ProductCard } from "../../../stories/molecules/Card/Card";
@@ -61,27 +60,31 @@ const CartPage = () => {
                                     <input 
                                         type="checkbox" 
                                         name="checkoutProducts" 
+                                        className="cmp-cart__checkbox"
                                         checked={selectedProducts.some((selectedProduct) => selectedProduct.id === product.id)}
                                         onChange={() => handleCheckboxChange(product)} 
                                     />
-                                    <ProductCard
-                                        image={product.image}
-                                        brand_name={product.brand_name}
-                                        description={product.description}
-                                        price={product.price.toString()}
-                                        discount={product.discount}
-                                        addToCartButton={false}
-                                    />
-                                    {/* <Button className="cmp-cart__buy-now" >
-                                        <Link to="/" >Buy Now</Link>
-                                    </Button> */}
+                                    {/* <Link to= >  */}
+                                        <ProductCard
+                                            image={product.image}
+                                            brand_name={product.brand_name}
+                                            description={product.description}
+                                            price={product.price.toString()}
+                                            discount={product.discount}
+                                            addToCartButton={false}
+                                            counter={true}
+                                            className="w-100 cmp-cart__link--product-page"
+                                            linkTo = {`/productDetails/${product.type}/${product.id}`}
+                                        />
+                                    {/* </Link> */}
+                                    
                                 </li>
                             ))}
                         </ul>
                         <div className="cmp-cart__subtotal">
                             <h2 className="cmp-cart__subtotal-text px-1">Subtotal</h2>
                             <span className="cmp-cart__subtotal-text">
-                                ({cartProducts.length + " item"}): <span className="cmp-cart__rupee-icon">&#8377;</span> 
+                                ({selectedProducts.length + " item"}): <span className="cmp-cart__rupee-icon">&#8377;</span> 
                                 <span className="cmp-cart__total-price"> {selectedProducts.reduce((sum, ele) => sum + ele.price, 0)} </span> 
                             </span>
 

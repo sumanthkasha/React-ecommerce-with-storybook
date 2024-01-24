@@ -1,38 +1,28 @@
+@import '../../../assets/base.scss';
+
 .quantity-counter {
   display: flex;
-  border-radius: 8px;
-  max-width: 200px;
 
-  button {
-    border-radius: 50%;
-    border: 1px solid gray;
-    border: none;
-    padding: 10px;
-    font-size: large;
-
-    &:first-child {
-      border-right: 1px solid gray;
-    }
-
-    &:last-child {
-      border-left: 1px solid #ccc;
-      border-radius: 50%;
-    }
-
-    &:disabled {
-      background-color: green;
-      color: #aaa;
-    }
+  &__input {
+    width: 50px;
+    border: 1px solid $black;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    background: $gray-100;
+    color: $black;
+    appearance: none;
+    outline: 0;
   }
 
   span {
-    flex-grow: 2;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin: 5px;
-    border-radius: 2px;
+    justify-content: center;
+    font-size: 16px;
+    padding: 0 10px;
+    cursor: pointer;
+    color: $black;
+    user-select: none;
   }
 }
