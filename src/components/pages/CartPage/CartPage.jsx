@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { ProductCard } from "../../../stories/molecules/Card/Card";
 import { Button } from "../../../stories/atoms/Button/Button";
+import { FaArrowLeft } from "react-icons/fa6";
 import './CartPage.scss'
 
 const CartPage = () => {
@@ -53,6 +54,7 @@ const CartPage = () => {
             {cartProducts.length > 0 ?
                 (
                     <>
+                        <Link to={"/collections/tshirt"} className="cmp-cart__link mb-4"> <FaArrowLeft /> Continue Shopping</Link>
                         <h1 className="cmp-cart__title">Shopping Cart</h1>
                         <ul className="cmp-cart d-flex flex-column">
                             {cartProducts.map((product) => (
