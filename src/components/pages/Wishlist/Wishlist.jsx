@@ -2,30 +2,30 @@ import React, { useState, useEffect } from "react";
 import { useSelector , useDispatch} from "react-redux";
 import { Link } from "react-router-dom";
 
-import { ProductCard } from "../../../stories/molecules/Card/Card";
-import './Wishlist.scss';
 import { Button } from "../../../stories/atoms/Button/Button";
-import { addProduct, removeProduct, addProductToCart, removeProductFromCart } from "../../../redux/slice/productDataSlice";
+import { ProductCard } from "../../../stories/molecules/Card/Card";
+
+import { addProductToCart } from "../../../redux/slice/productDataSlice";
+import { defaultCollections } from "../../../assets/utility";
+import './Wishlist.scss';
 
 export default function Wislist() {
     const state = useSelector((state) => state);
+    const { data } = state.productData;
+    const { wishlistData } = state.wishlist;
+    
     const dispatch = useDispatch();
     const [wishlistProducts, setWishlistProducts] = useState([]);
     const [cartData, setCartData] = useState({});
 
-    
-    // const [wishlistProducts, setWishlistProducts] = useState(
-    //     JSON.parse(localStorage.getItem('wishlistData')) || []
-    // );
-
     useEffect(() => {
-        if (state.wishlist.wishlistData && state.wishlist.wishlistData.length > 0 && state.productData.data && state.productData.data.length > 0) {
-            const products = state.productData.data.filter((element) => (
-                state.wishlist.wishlistData.includes(element.id.toString())
+        if (wishlistData && wishlistData.length > 0 && data && data.length > 0) {
+            const products = data.filter((element) => (
+                wishlistData.includes(element.id.toString())
             ));
             setWishlistProducts(products);
         }
-    }, [state.wishlist.wishlistData, state.productData.data]);
+    }, [wishlistData, data]);
 
     useEffect(() => {
         for (const productId in cartData) {
@@ -36,7 +36,7 @@ export default function Wislist() {
               }
             }
         }
-      }, [state.wishlist.wishlistData, cartData, dispatch]);
+      }, [wishlistData, cartData, dispatch]);
 
     const handleUpdateCart = (productId) => {
         setCartData((prevCartData) => {
@@ -51,7 +51,7 @@ export default function Wislist() {
         <section className="cmp-wishlist-container">
             
             {
-                state.productData.data && wishlistProducts.length>0
+                data && wishlistProducts.length>0
                 ?
                 <ul className="cmp-wishlist d-flex">
                     {wishlistProducts.map((product) => (
@@ -60,7 +60,7 @@ export default function Wislist() {
                                 image={product.image} 
                                 brand_name={product.brand_name} 
                                 description={product.description}
-                                price={product.price}
+                                price={product.price.toString()}
                                 discount={product.discount}
                                 
                             />
@@ -76,7 +76,7 @@ export default function Wislist() {
                 :
                 <section className="cmp-wishlist__empty">
                     <h1 className="cmp-wishlist__text">Wishlist is empty</h1>
-                    <Link to="/collections/tshirt" relative="path"className="cmp-wishlist__link">Go to Collections</Link>
+                    <Link to={defaultCollections} relative="path"className="cmp-wishlist__link">Go to Collections</Link>
                 </section>
             }
         </section>

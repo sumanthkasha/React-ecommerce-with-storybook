@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import Slider from "react-slick";
 import DefaultImage from '../../../assets/images/default-image.svg';
 
+import { Bestseller } from '../../atoms/Tag/BestSeller';
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './Carousel.scss';
 
-export const Carousel = ({dots, slidesToShow, slidesToScroll, autoplay, arrows, data, imgSource, ...props}) => {
+export const Carousel = ({dots, slidesToShow, slidesToScroll, autoplay, arrows, data, imgSource, bestseller, ...props}) => {
     
     var settings = {
         dots: dots,
@@ -29,6 +31,7 @@ export const Carousel = ({dots, slidesToShow, slidesToScroll, autoplay, arrows, 
         return (
             data.map((element, index) => (
                 <div key={index} className="cmp__slick-carousel__content d-flex flex-column product__product">
+                    {bestseller && <Bestseller />}
                     <div className="cmp__slick-carousel__img-wrapper">
                         <img 
                             className="product__img" 
@@ -68,6 +71,7 @@ Carousel.propTypes = {
     autoplay: PropTypes.bool,
     arrows: PropTypes.bool,
     imgSource: PropTypes.string,
+    bestseller: PropTypes.bool,
 };
 
 Carousel.defaultProps = {
@@ -76,5 +80,6 @@ Carousel.defaultProps = {
     slidesToScroll: 1,
     autoplay: true,
     arrows: true,
-    imgSource: "/images/"
+    imgSource: "/images/",
+    bestseller: false,
 }

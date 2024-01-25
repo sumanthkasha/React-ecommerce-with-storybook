@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+import localJson from "../../../assets/jsonData/local.json";
+import { bestseller, defaultCollections } from "../../../assets/utility";
 import { FaShoppingBag, FaUser, FaArrowRight } from "react-icons/fa";
+
 import { Button } from "../../../stories/atoms/Button/Button";
 import { Carousel } from "../../../stories/molecules/Carousel/Carousel";
 
@@ -14,14 +17,8 @@ export const HeroBanner = () => {
     const [heroCarouselData, setHeroCarouselData] = useState(null);
 
     useEffect(() => {
-        // if (state.productData.data) {
-        //     const firstTenElements = state.productData.data.slice(0, 7);
-        //     setHeroCarouselData(firstTenElements);
-        // }
-
         if (state.productData.data) {
-            const firstTenElements = state.productData.data.filter( element => element.tag === "bestseller");
-            // console.log(firstTenElements);
+            const firstTenElements = state.productData.data.filter( element => element.tag === bestseller);
             setHeroCarouselData(firstTenElements);
         }
 
@@ -43,33 +40,29 @@ export const HeroBanner = () => {
         return () => {
           window.removeEventListener('resize', handleResize);
         };
-      }, []);
+    }, []);
 
     return (
         <section className="hero-banner">
             <div className="hero-banner__content">
-                <h2>Welcome to TA Ecommerce</h2>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Repudiandae quam magnam obcaecati error consequatur repellat fugiat,
-                    deleniti nisi eum voluptates.
-                </p>
+                <h2> {localJson["hero_banner"][0].title} </h2>
+                <p> {localJson["hero_banner"][0].text} </p>
                 <ul className="hero-banner__counter">
                     <li>
                         <h3 className="d-flex align-items-start">
-                            <FaShoppingBag />68+k
+                            <FaShoppingBag />{localJson["hero_banner"][0].new_collections}
                         </h3>
                         <span>new collections</span>
                     </li>
                     <li>
                         <h3 className="d-flex align-items-start">
-                            <FaUser />25,634
+                            <FaUser />{localJson["hero_banner"][0].active_customers}
                         </h3>
                         <span>active customers</span>
                     </li>
                 </ul>
                 <Button className="btn">
-                    <Link to={"/collections/tshirt"} >Go to Collections <FaArrowRight /></Link>
+                    <Link to={defaultCollections} >Go to Collections <FaArrowRight /></Link>
                 </Button>
             </div>
             <div className="hero-banner__carousel">
@@ -79,6 +72,7 @@ export const HeroBanner = () => {
                     slidesToScroll={1}
                     arrows={false} 
                     variableWidth= {true}
+                    bestseller={true}
                 />
             </div>
             <div className="circle"></div>

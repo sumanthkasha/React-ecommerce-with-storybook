@@ -4,7 +4,7 @@
     position: relative;
     margin-bottom: pxToRem(28px);
     width: 95vw;
-    padding: 16px;
+    padding: pxToRem(16px);
 
     button.slick-arrow {
         color: $black;
@@ -36,8 +36,6 @@
             align-items: center;
 
             &::before {
-                // left: pxToRem(40px);
-
                 content: "";
                 display: block;
                 width: pxToRem(12px);
@@ -52,8 +50,6 @@
             left: pxToRem(6px);
 
             &::before {
-                // right: pxToRem(40px);
-
                 content: "";
                 display: block;
                 width: pxToRem(12px);
@@ -70,8 +66,16 @@
             margin-bottom: 0;
         }
 
+        .bestseller {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: pxToRem(6px) pxToRem(20px);
+            font-weight: 400;
+        }
+
         .product__img {
-            max-width: 40px;
+            max-width: pxToRem(40px);
             width: 100%;
         }
     }
