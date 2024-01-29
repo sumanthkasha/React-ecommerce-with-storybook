@@ -4,6 +4,7 @@
     .home-category {
         margin: 16px;
         padding: 16px;
+        overflow: hidden;
 
         &--shirts-carousel,
         &--shoes-carousel {
@@ -19,6 +20,10 @@
             a {
                 text-decoration: none;
             }
+        }
+
+        .cmp__slick-carousel {
+            width: 100%;
         }
 
         .cmp__slick-carousel {
@@ -45,6 +50,10 @@
                 display: flex !important;
                 align-items: center;
                 justify-content: center;
+
+                @media screen and (max-width: 768px) {
+                    width: 40px;
+                }
 
                 &.slick-prev {
                     left: 0;
