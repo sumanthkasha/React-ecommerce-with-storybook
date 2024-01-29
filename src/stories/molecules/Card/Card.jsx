@@ -49,7 +49,6 @@ ProductCard.propTypes = {
     discount: PropTypes.string,
     counter: PropTypes.bool,
     linkTo: PropTypes.string,
-    // addToCartButton: PropTypes.bool,
 };
 
 ProductCard.defaultProps = {
@@ -61,5 +60,4 @@ ProductCard.defaultProps = {
     discount: '',
     counter: false,
     linkTo: "#"
-    // addToCartButton: true
 }

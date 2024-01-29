@@ -21,17 +21,17 @@
   }
 
   &--small {
-    font-size: 12px;
+    font-size: $font-size-xs;
     padding: pxToRem(10px) pxToRem(16px);
   }
 
   &--medium {
-    font-size: 14px;
+    font-size: $font-size-s;
     padding: pxToRem(11px) pxToRem(20px);
   }
 
   &--large {
-    font-size: 16px;
+    font-size: $font-size-base;
     padding: pxToRem(12px) pxToRem(24px);
   }
 }

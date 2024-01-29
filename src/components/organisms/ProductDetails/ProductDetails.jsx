@@ -21,7 +21,6 @@ export default function ProductDetails() {
     const state = useSelector((state) => state);
     const data = state.productData.data;
     const wishlist = state.wishlist.wishlistData;
-    // const cart = state.cart.cartData;
 
     const [wishlistData, setWishListData] = useState({});
     const [cartData, setCartData] = useState({});
@@ -49,15 +48,6 @@ export default function ProductDetails() {
                 }
             }
         }
-
-        // if (wishlist.some((item) => params.productId === item)) {
-        //     handleUpdateWishlist(params.productId);
-        // }
-
-        // if (cart.some((item) => params.productId === item)) {
-        //     handleUpdateCart(params.productId);
-        // }
-
     }, [wishlistData, cartData, dispatch]);
 
     const handleUpdateWishlist = (productId) => {

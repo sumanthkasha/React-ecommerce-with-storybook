@@ -11,7 +11,6 @@ import { Link, useParams } from "react-router-dom";
 
 const CollectionsPage = () => {
     const dispatch = useDispatch();
-    //const { isLoading, data } = useSelector((state) => state.productData);
     const state = useSelector((state) => state);
     const isLoading = state.isLoading;
     const data = state.productData.data;
@@ -68,9 +67,6 @@ const CollectionsPage = () => {
                 if (status === "add") {
                     dispatch(addProductToCart(productId));
                 } 
-                // else if (status === "remove") {
-                //     dispatch(removeProductFromCart(productId));
-                // }
             }
         }
     }, [wishlistData, cartData, dispatch]);
@@ -87,7 +83,6 @@ const CollectionsPage = () => {
 
     const handleUpdateCart = (productId) => {
         setCartData((prevCartData) => {
-            // const newStatus = prevCartData[productId] === "add" ? "remove" : "add";
             return {
                 ...prevCartData,
                 [productId]: "add",
@@ -97,7 +92,6 @@ const CollectionsPage = () => {
             ...prevAddedToCart,
             [productId]: true,
         }));
-        // window.location.href = "/cart";
     }
 
     const filteredProducts = (data = "tshirt") => {

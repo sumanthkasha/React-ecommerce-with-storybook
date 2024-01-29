@@ -1,3 +1,5 @@
+@import '../../../assets/base.scss';
+
 .cmp-error {
     display: flex;
     flex-direction: column;
@@ -15,29 +17,29 @@
     }
 
     &__code {
-        font-size: 50px;
+        font-size: pxToRem(50px);
     }
 
     &__message {
-        font-size: 32px;
+        font-size: $font-size-5xl;
     }
 
     &__text {
-        font-size: 16px;
+        font-size: $font-size-base;
         text-align: center;
     }
 
     @media screen and (max-width: 991px) {
         &__code {
-            font-size: 32px;
+            font-size: $font-size-5xl;
         }
     
         &__message {
-            font-size: 22px;
+            font-size: $font-size-2xl;
         }
     
         &__text {
-            font-size: 14px;
+            font-size: $font-size-s;
         }
     }
 }

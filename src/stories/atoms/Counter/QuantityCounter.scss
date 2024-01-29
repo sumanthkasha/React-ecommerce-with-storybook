@@ -4,10 +4,10 @@
   display: flex;
 
   &__input {
-    width: 50px;
+    width: pxToRem(50px);
     border: 1px solid $black;
     line-height: 30px;
-    font-size: 20px;
+    font-size: $font-size-xl;
     text-align: center;
     background: $gray-100;
     color: $black;
@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: $font-size-base;
     padding: 0 10px;
     cursor: pointer;
     color: $black;
