@@ -15,7 +15,7 @@
         max-width: 100%;
         width: 100%;
         background: white;
-        border-radius: 8px;
+        border-radius: pxToRem(8px);
         border: 1px solid #e0e0e0;
         align-items: center;
         display: flex;
@@ -33,13 +33,17 @@
         .card{
             padding-bottom: 20px;
             border: none;
+
+            a{
+                text-decoration: none;
+            }
         }
     }
 
     &__link{
         color: #007185;
         text-decoration: none;
-        font-size: 14px;
+        font-size: $font-size-s;
 
         &:hover{
             color: red;
@@ -48,12 +52,12 @@
     }
 
     &__cart{
-        border-radius: 100px;
+        border-radius: pxToRem(100px);
         padding: 0.25rem;
         border: none;
         background-color: #007185;
         color: #fff;
-        width: 150px;
+        width: pxToRem(150px);
     }
 
 
@@ -66,13 +70,13 @@
     }
 
     &__text {
-        font-size: 32px;
+        font-size: $font-size-5xl;
         text-align: center;
     }
 
     @media screen and (max-width: 991px) {
         &__text {
-            font-size: 14px;
+            font-size: $font-size-s;
         }
     }
 }

@@ -3,18 +3,16 @@
 .footer {
     position: relative;
     width: 100%;
-    // bottom: 0;
     padding: pxToRem(10px) 0 pxToRem(30px);
     display: flex;
     justify-content: center;
-    font-size: 12px;
+    font-size: $font-size-xs;
     background-color: $dark-blue-gray;
     color: $gray-200;
     z-index: 99;
     margin-top: auto;
     @media screen and (max-width: 991px){
-        font-size: 10px;
-        // position: relative;
+        font-size: $font-size-base * 0.625;
     }
 
     &__section {

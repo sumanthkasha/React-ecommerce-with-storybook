@@ -2,3 +2,9 @@
     $remValue: calc($pxValue / $font-size-base-px);
     @return #{$remValue}rem;
 }
+
+@mixin fontDefinition($fontSize, $fontWeight, $lineHeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+}

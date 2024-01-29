@@ -48,7 +48,7 @@ $golden-yellow: #FFCD39;
 $hunter-green: #0F5132;
 $golden-brown: #997404;
 $maroon: #B02A37;
-
+$border-brown: #706b6b;
 
 $dark-shade-gray: #131921;
 $dark-blue-gray: #131A22;
@@ -59,3 +59,26 @@ $shade-magenta: #ae0a53;
 $btn-primary: #1ea7fd;
 $shade-blue: #2A55E5;
 $pale-cloud: #E3E6E6;
+
+//fonts
+$font-size-base: 1rem; //(16px)
+$font-size-xs: $font-size-base * 0.75; //(12px)
+$font-size-s: $font-size-base * 0.875; //(14px)
+$font-size-m: $font-size-base * 1; //(16px)
+$font-size-l: $font-size-base * 1.125; //(18px)
+$font-size-xl: $font-size-base * 1.25; //(20px)
+$font-size-2xl: $font-size-base * 1.375; //(22px)
+$font-size-3xl: $font-size-base * 1.5; //(24px)
+$font-size-4xl: $font-size-base * 1.75; //(28px)
+$font-size-5xl: $font-size-base * 2; //(32px)
+$font-size-6xl: $font-size-base * 2.25; //(36px)
+$font-size-7xl: $font-size-base * 2.5; //(40px)
+$font-size-8xl: $font-size-base * 2.75; //(44px)
+$font-size-9xl: $font-size-base * 3; //(48px)
+$font-size-10xl: $font-size-base * 3.5; //(56px)
+
+//font weight
+$font-weight-light : 300;
+$font-weight-regular : 400;
+$font-weight-semi-bold : 600;
+$font-weight-bold : 700;

@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     background-color: $dark-blue;
-    padding: 18px;
+    padding: pxToRem(18px);
     overflow: hidden;
     display: flex;
     justify-content: flex-start;
@@ -16,7 +16,7 @@
 
     &__content {
         width: 40%;
-        margin-left: 60px;
+        margin-left: pxToRem(60px);
         color: $white;
         position: relative;
         z-index: 2;
@@ -32,13 +32,11 @@
     }
 
     h2 {
-        letter-spacing: 0.8px;
-        font-weight: 700;
-        font-size: 44px;
-        line-height: 1.2;
+        @include fontDefinition($font-size-8xl,$font-weight-bold, 1.2);
+        letter-spacing: pxToRem(0.8px);
 
         @media screen and (max-width: 992px) {
-            font-size: 32px;
+            font-size: $font-size-5xl;
         }
     }
 
@@ -46,10 +44,10 @@
         font-size: 1rem;
         line-height: 1.8;
         margin-inline: auto;
-        margin-top: 10px;
+        margin-top: pxToRem(10px);
 
         @media screen and (max-width: 992px) {
-            font-size: 14px;
+            font-size: $font-size-s;
         }
     }
 
@@ -70,7 +68,7 @@
         }
 
         i {
-            margin-right: 10px;
+            margin-right: pxToRem(10px);
         }
 
         span {
@@ -78,18 +76,18 @@
             text-transform: capitalize;
             font-size: 0.8rem;
             color: $silver;
-            margin-top: 3px;
+            margin-top: pxToRem(3px);
         }
     }
 
     .btn {
         background-color: $magenta;
         border: none;
-        padding: 12px 20px;
-        font-size: 16px;
+        padding: pxToRem(12px) pxToRem(20px);
+        font-size: $font-size-base;
         cursor: pointer;
         display: inline-block;
-        border-radius: 4px;
+        border-radius: pxToRem(4px);
         transition: 0.3s ease-in;
 
         &:hover {
@@ -117,7 +115,7 @@
     &__carousel {
         position: relative;
         width: 60%;
-        padding-left: 50px;
+        padding-left: pxToRem(50px);
         z-index: 9;
 
         @media screen and (max-width: 768px) {
@@ -133,17 +131,17 @@
                 text-align: center;
                 align-items: center;
                 justify-content: center;
-                padding: 18px;
-                max-width: 226px !important;
+                padding: pxToRem(18px);
+                max-width: pxToRem(226px) !important;
                 height: 24rem;
                 position: relative;
-                border-radius: 12px;
+                border-radius: pxToRem(12px);
                 box-shadow: -1px 5px 15px #0000001f;
                 text-align: center;
                 cursor: pointer;
 
                 @media screen and (max-width: 992px) {
-                    max-width: 400px !important;
+                    max-width: pxToRem(400px) !important;
                 }
 
                 &:active {
@@ -164,14 +162,14 @@
                 }
 
                 .product__brand {
-                    font-size: 18px;
+                    font-size: $font-size-l;
                     font-weight: 600;
-                    padding-top: 10px;
+                    padding-top: pxToRem(10px);
                 }
 
                 .product__desc {
-                    font-size: 14px;
-                    padding-top: 10px;
+                    font-size: $font-size-s;
+                    padding-top: pxToRem(10px);
                 }
 
             }
@@ -184,19 +182,19 @@
 
             .slick-track {
                 display: flex;
-                gap: 10px;
+                gap: pxToRem(10px);
             }
 
             .slick-dots {
-                bottom: -40px;
-
+                bottom:  pxToRem(-40px);
+               
                 li {
                     margin: 5px;
                     button {
                         &::before {
                             content: "";
-                            width: 20px;
-                            height: 6px;
+                            width:  pxToRem(20px);
+                            height:  pxToRem(6px);
                             background: $white;
                         }
                     }

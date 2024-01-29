@@ -1,5 +1,7 @@
+@import '../../../assets/base.scss';
+
 .imgCmp {
-  margin: 10px;
+  margin: pxToRem(10px);
   display: inline-block;
   cursor: pointer;
 }
@@ -10,7 +12,7 @@
 }
 
 figcaption {
-  margin-top: 10px;
-  font-size: 12px;
-  line-height: 18px;
+  margin-top: pxToRem(10px);
+  font-size: $font-size-xs;
+  line-height: pxToRem(18px);
 }

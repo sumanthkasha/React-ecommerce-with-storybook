@@ -14,8 +14,8 @@
     gap: pxToRem(16px);
 
     &__title {
-        font-size: 26px;
-        font-weight: 400;
+        font-size: $font-size-base * 1.625;
+        font-weight: $font-weight-regular;
         padding-bottom: pxToRem(16px);
         margin-bottom: pxToRem(16px);
         border-bottom: 1px solid $gray-300;
@@ -35,7 +35,7 @@
     }
     
     &__subtotal-text {
-        font-size: 18px;
+        font-size: $font-size-l;
         margin-bottom: 0;
     }
 
@@ -43,12 +43,12 @@
         position: relative;
         top: pxToRem(-3px);
         right: pxToRem(-2px);
-        font-size: 12px;
-        font-weight: 600;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-semi-bold;
     }
 
     &__total-price {
-        font-weight: 600;
+        font-weight: $font-weight-semi-bold;
     }
 
     &__checkbox {
@@ -107,21 +107,21 @@
                     }
                 }
                 .quantity-counter {
-                    margin-top: 16px;
+                    margin-top: pxToRem(16px);
                     margin-bottom: 0;
 
                     @media screen and (max-width: 768px) {
-                        margin: 8px 0;
+                        margin: pxToRem(8px) 0;
                     }
 
                     span {
-                        font-size: 10px;
+                        font-size: pxToRem(10px);
                     }
 
                     &__input {
-                        width: 24px;
-                        font-size: 16px;
-                        line-height: 24px;
+                        width: pxToRem(24px);
+                        font-size: $font-size-base;
+                        line-height: pxToRem(24px);
                     }
 
                     &__decrement {
@@ -135,7 +135,7 @@
     &__link{
         color: $shade-blue;
         text-decoration: none;
-        font-size: 14px;
+        font-size: $font-size-s;
 
         &:hover{
             color: $red;
@@ -156,7 +156,7 @@
     }
 
     &__text {
-        font-size: 32px;
+        font-size: $font-size-5xl;
         text-align: center;
     }
 
@@ -167,7 +167,7 @@
         border-radius: pxToRem(8px);
         margin-left: pxToRem(16px);
         background: $yellow;
-        font-size: 14px;
+        font-size: $font-size-s;
         color: $black;
         max-width: pxToRem(150px);
         width: 100%;
@@ -183,7 +183,7 @@
 
     @media screen and (max-width: 991px) {
         &__text {
-            font-size: 14px;
+            font-size: $font-size-s;
         }
     }
 
@@ -201,26 +201,26 @@
     
         &__content{
             background: #fff;
-            padding: 20px;
+            padding: pxToRem(20px);
             text-align: center;
             cursor: pointer;
             width: 50%;
             position: relative;
-            font-size: 18px;
-            border: 2px solid #706b6b;
+            font-size: $font-size-l;
+            border: 2px solid $border-brown;
 
             p{
-                color: orange;
+                color: $yellow;
             }
         }
     
         &__close{
             position: absolute;
             top: 0px;
-            right: 10px;
+            right: pxToRem(10px);
             cursor: pointer;
             z-index: 1;
-            font-size: 40px;
+            font-size: $font-size-7xl;
         }
     }
 }
