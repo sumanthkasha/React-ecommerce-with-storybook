@@ -38,6 +38,11 @@
         max-width: pxToRem(400px);
         width: 100%;
 
+        .textfield {
+            display: flex;
+            flex: 1;
+        }
+
         &--desktop {
             @media screen and (min-width: 992px){
                 display: flex !important;

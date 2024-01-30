@@ -66,20 +66,17 @@ const CartPage = () => {
                                         checked={selectedProducts.some((selectedProduct) => selectedProduct.id === product.id)}
                                         onChange={() => handleCheckboxChange(product)} 
                                     />
-                                    {/* <Link to= >  */}
-                                        <ProductCard
-                                            image={product.image}
-                                            brand_name={product.brand_name}
-                                            description={product.description}
-                                            price={product.price.toString()}
-                                            discount={product.discount}
-                                            addToCartButton={false}
-                                            counter={true}
-                                            className="w-100 cmp-cart__link--product-page"
-                                            linkTo = {`/productDetails/${product.type}/${product.id}`}
-                                        />
-                                    {/* </Link> */}
-                                    
+                                    <ProductCard
+                                        image={product.image}
+                                        brand_name={product.brand_name}
+                                        description={product.description}
+                                        price={product.price.toString()}
+                                        discount={product.discount}
+                                        addToCartButton={false}
+                                        counter={true}
+                                        className="w-100 cmp-cart__link--product-page"
+                                        linkTo = {`/productDetails/${product.type}/${product.id}`}
+                                    />
                                 </li>
                             ))}
                         </ul>

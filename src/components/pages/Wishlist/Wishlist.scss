@@ -4,35 +4,43 @@
     min-height: 75vh;
     display: flex;
     flex-direction: column;
+    background: $white;
+    margin: pxToRem(16px);
+    padding: pxToRem(16px); 
 }
 
 .cmp-wishlist {
+    gap: pxToRem(8px);
     flex-wrap: wrap;
-    padding: 0 32px; 
+    padding: 0;
     
     &__item {
         list-style-type: none;
         max-width: 100%;
         width: 100%;
-        background: white;
+        background: $white;
         border-radius: pxToRem(8px);
-        border: 1px solid #e0e0e0;
+        border: 1px solid $gray-100;
         align-items: center;
         display: flex;
         flex-direction: column;
-        padding-bottom: 20px;
+        padding-bottom: pxToRem(20px);
 
         @media (min-width:768px){
-            max-width: 33.3%;
+            max-width: 32%;
         }
 
         @media (min-width: 1024px){
-            max-width: 25%;
+            max-width: 24%;
         }
 
         .card{
-            padding-bottom: 20px;
+            padding-bottom: pxToRem(20px);
             border: none;
+
+            .imgCmp {
+                cursor: auto;
+            }
 
             a{
                 text-decoration: none;
@@ -41,12 +49,12 @@
     }
 
     &__link{
-        color: #007185;
+        color: $dark-blue;
         text-decoration: none;
         font-size: $font-size-s;
 
         &:hover{
-            color: red;
+            color: $red;
             text-decoration: underline;
         }
     }
@@ -55,8 +63,8 @@
         border-radius: pxToRem(100px);
         padding: 0.25rem;
         border: none;
-        background-color: #007185;
-        color: #fff;
+        background-color: $dark-blue;
+        color: $white;
         width: pxToRem(150px);
     }
 
