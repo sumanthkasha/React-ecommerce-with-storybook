@@ -488,16 +488,7 @@
 
 
 
-        {
-            "id": 46,
-            "brand_name":"HIGHLANDER",
-            "description": "Men White Sneakers",
-            "image": "shoe1.webp",
-            "type": "shoe",
-            "popularity": 5,
-            "price": 170,
-            "discount": "12%"
-        },
+        
         {
             "id": 47,
             "brand_name":"U.S. Polo Assn.",
@@ -506,17 +497,17 @@
             "type": "shoe",
             "popularity": 10,
             "price": 240,
-            "discount": "18%"
+            "discount": "28%"
         },
         {
-            "id": 48,
-            "brand_name":"PUMA Motorsport",
-            "description": "Unisex Black Ultra Sneakers",
-            "image": "shoe3.webp",
+            "id": 61,
+            "brand_name":"Puma",
+            "description": "Black Cell Fraction Fade",
+            "image": "shoe12.webp",
             "type": "shoe",
-            "popularity": 4,
-            "price": 360,
-            "discount": "24%"
+            "popularity": 10,
+            "price": 2900,
+            "discount": "68%"
         },
         {
             "id": 49,
@@ -526,7 +517,7 @@
             "type": "shoe",
             "popularity": 8,
             "price": 490,
-            "discount": "28%"   
+            "discount": "18%"   
         },
         {
             "id": 50,
@@ -539,14 +530,14 @@
             "discount": "34%" 
         },
         {
-            "id": 51,
-            "brand_name":"Mast & Harbour",
-            "description": "Burgundy Woven Sneakers",
-            "image": "shoe6.webp",
+            "id": 48,
+            "brand_name":"PUMA Motorsport",
+            "description": "Unisex Black Ultra Sneakers",
+            "image": "shoe3.webp",
             "type": "shoe",
-            "popularity": 6,
-            "price": 680,
-            "discount": "38%" 
+            "popularity": 4,
+            "price": 360,
+            "discount": "24%"
         },
         {
             "id": 52,
@@ -556,47 +547,7 @@
             "type": "shoe",
             "popularity": 2,
             "price": 740,
-            "discount": "44%" 
-        },
-        {
-            "id": 53,
-            "brand_name":"Fentacia",
-            "description": "Men Olive Green Loafers",
-            "image": "shoe8.webp",
-            "type": "shoe",
-            "popularity": 4,
-            "price": 1020,
-            "discount": "48%" 
-        },
-        {
-            "id": 54,
-            "brand_name":"Roadster",
-            "description": "Men Navy Sneakers",
-            "image": "shoe9.webp",
-            "type": "shoe",
-            "popularity": 1,
-            "price": 1450,
-            "discount": "54%" 
-        },
-        {
-            "id": 55,
-            "brand_name":"ASIAN",
-            "description": "Men Grey Mesh Shoes",
-            "image": "shoe10.webp",
-            "type": "shoe",
-            "popularity": 7,
-            "price": 1800,
-            "discount": "58%" 
-        },
-        {
-            "id": 56,
-            "brand_name":"Red Tape",
-            "description": "Men Black Textile Shoes",
-            "image": "shoe11.webp",
-            "type": "shoe",
-            "popularity": 9,
-            "price": 2200,
-            "discount": "64%" 
+            "discount": "15%" 
         },
         {
             "id": 57,
@@ -609,14 +560,34 @@
             "discount": "68%" 
         },
         {
-            "id": 58,
-            "brand_name":" H&M ",
-            "description": "Mens Green Canvas hi-top",
-            "image": "shoe13.webp",
+            "id": 54,
+            "brand_name":"Roadster",
+            "description": "Men Navy Sneakers",
+            "image": "shoe9.webp",
             "type": "shoe",
-            "popularity": 5,
-            "price": 3500,
-            "discount": "72%" 
+            "popularity": 1,
+            "price": 1450,
+            "discount": "44%" 
+        },
+        {
+            "id": 51,
+            "brand_name":"Mast & Harbour",
+            "description": "Burgundy Woven Sneakers",
+            "image": "shoe6.webp",
+            "type": "shoe",
+            "popularity": 6,
+            "price": 680,
+            "discount": "28%" 
+        },
+        {
+            "id": 55,
+            "brand_name":"ASIAN",
+            "description": "Men Grey Mesh Shoes",
+            "image": "shoe10.webp",
+            "type": "shoe",
+            "popularity": 7,
+            "price": 1800,
+            "discount": "68%" 
         },
         {
             "id": 59,
@@ -626,7 +597,37 @@
             "type": "shoe",
             "popularity": 9,
             "price": 4500,
-            "discount": "77%" 
+            "discount": "73%" 
+        },
+        {
+            "id": 56,
+            "brand_name":"Red Tape",
+            "description": "Men Black Textile Shoes",
+            "image": "shoe11.webp",
+            "type": "shoe",
+            "popularity": 9,
+            "price": 2200,
+            "discount": "64%" 
+        },
+        {
+            "id": 46,
+            "brand_name":"HIGHLANDER",
+            "description": "Men White Sneakers",
+            "image": "shoe1.webp",
+            "type": "shoe",
+            "popularity": 5,
+            "price": 170,
+            "discount": "70%"
+        },
+        {
+            "id": 58,
+            "brand_name":" H&M ",
+            "description": "Mens Green Canvas hi-top",
+            "image": "shoe13.webp",
+            "type": "shoe",
+            "popularity": 5,
+            "price": 3500,
+            "discount": "48%" 
         },
         {
             "id": 60,
@@ -639,14 +640,14 @@
             "discount": "84%" 
         },
         {
-            "id": 61,
-            "brand_name":"Puma",
-            "description": "Black Cell Fraction Fade",
-            "image": "shoe12.webp",
+            "id": 53,
+            "brand_name":"Fentacia",
+            "description": "Men Olive Green Loafers",
+            "image": "shoe8.webp",
             "type": "shoe",
-            "popularity": 10,
-            "price": 2900,
-            "discount": "68%"
+            "popularity": 4,
+            "price": 1020,
+            "discount": "12%" 
         },
         {
             "id": 62,
