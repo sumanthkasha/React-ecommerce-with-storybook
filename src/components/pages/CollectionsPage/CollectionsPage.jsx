@@ -185,11 +185,13 @@ const CollectionsPage = () => {
                                         </Button>
                                         <Link to={`/productDetails/${prod.type}/${prod.id}`} className="d-flex flex-column">
                                             <img className="product__img" src={"/images/" + prod.image} alt={prod.brand_name + " " + prod.type} />
-                                            <span className="product__brand"> {prod.brand_name} </span>
-                                            <span className="product__desc"> {prod.description} </span>
-                                            <span className="product__discount"> Up to {prod.discount} off</span>
-                                            <span className="product__popularity"> Popularity: {prod.popularity} </span>
-                                            <span className="product__price"> &#8377; {prod.price} </span>
+                                            <div className="product__details d-flex flex-column p-3 mt-0">
+                                                <span className="product__brand"> {prod.brand_name} </span>
+                                                <span className="product__desc"> {prod.description} </span>
+                                                <span className="product__discount"> Up to {prod.discount} off</span>
+                                                <span className="product__popularity"> Popularity: {prod.popularity} </span>
+                                                <span className="product__price"> &#8377; {prod.price} </span>
+                                            </div>
                                         </Link>
                                         {cartData[prod.id.toString()] === 'remove' || !cartData[prod.id] ? <Button
                                             className="product__cart"

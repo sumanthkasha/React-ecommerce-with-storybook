@@ -27,8 +27,6 @@ export default function Wislist() {
         }
     }, [wishlistData, data]);
 
-    console.log(wishlistData);
-
     const handleUpdateCart = (productId) => {
         dispatch(addProductToCart(productId.toString()));
         dispatch(removeProduct(productId.toString()));
