@@ -25,7 +25,8 @@
             position: relative;
             max-width: pxToRem(120px);
             
-            @media screen and (max-width: 992px) {
+            // @media screen and (max-width: 992px) {
+             @include media-breakpoint-down(md){
                 max-width: pxToRem(80px);
             }
 
@@ -134,7 +135,9 @@
                 }
             }
     
-            @media (min-width:768px){
+            // @media (min-width:768px){
+            @include media-breakpoint-down(sm){
+
                 &__sorts {
                     margin-left: auto !important;
                 }
@@ -163,7 +166,8 @@
             text-transform: capitalize;
             border-bottom: pxToRem(2px) solid transparent;
 
-            @media screen and (max-width: 768px) {
+            // @media screen and (max-width: 768px) {
+            @include media-breakpoint-down(sm){
                 font-size: $font-size-s;
             }
 
