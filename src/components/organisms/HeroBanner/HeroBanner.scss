@@ -21,7 +21,8 @@
         position: relative;
         z-index: 2;
 
-        @media screen and (max-width: 768px) {
+        // @media screen and (max-width: 768px) {
+        @include media-breakpoint-down(sm){
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -35,7 +36,8 @@
         @include fontDefinition($font-size-8xl,$font-weight-bold, 1.2);
         letter-spacing: pxToRem(0.8px);
 
-        @media screen and (max-width: 992px) {
+        // @media screen and (max-width: 992px) {
+        @include media-breakpoint-down(md){
             font-size: $font-size-5xl;
         }
     }
@@ -46,7 +48,8 @@
         margin-inline: auto;
         margin-top: pxToRem(10px);
 
-        @media screen and (max-width: 992px) {
+        // @media screen and (max-width: 992px) {
+        @include media-breakpoint-down(md){
             font-size: $font-size-s;
         }
     }
@@ -118,7 +121,8 @@
         padding-left: pxToRem(50px);
         z-index: 9;
 
-        @media screen and (max-width: 768px) {
+        // @media screen and (max-width: 768px) {
+        @include media-breakpoint-down(sm){
             padding-left: 0;
             width: 100%;
         }
@@ -140,7 +144,8 @@
                 text-align: center;
                 cursor: pointer;
 
-                @media screen and (max-width: 992px) {
+                // @media screen and (max-width: 992px) {
+                @include media-breakpoint-down(md){
                     max-width: pxToRem(400px) !important;
                 }
 

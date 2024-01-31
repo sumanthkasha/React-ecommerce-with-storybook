@@ -14,7 +14,8 @@
     display: flex;
     gap: pxToRem(40px);
 
-    @media screen and (max-width: 768px) {
+    // @media screen and (max-width: 768px) {
+      @include media-breakpoint-down(sm){
       flex-direction: column;
     }
   }
@@ -132,7 +133,8 @@
   margin: pxToRem(5px);
 }
 
-@media (max-width: 768px) {
+// @media (max-width: 768px) {
+@include media-breakpoint-down(sm){
   .product-image,
   .product-info {
     max-width: 100%;

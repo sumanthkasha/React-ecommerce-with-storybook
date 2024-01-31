@@ -47,7 +47,8 @@
                 text-decoration: none;
                 font-size: $font-size-s;
 
-                @media screen and (max-width: 992px) {
+                // @media screen and (max-width: 992px) {
+                @include media-breakpoint-down(md){
                     font-size: $font-size-xs;
                 }
             }

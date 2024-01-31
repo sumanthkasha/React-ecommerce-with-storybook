@@ -11,7 +11,8 @@
 
     .container-fluid {
         flex-wrap: nowrap;
-        @media screen and (max-width: 991px){
+        // @media screen and (max-width: 991px){
+        @include media-breakpoint-down(md){
             flex-direction: column;
         }
     }
@@ -22,7 +23,8 @@
     color: $gray-200;
 
     &--tablet {
-        @media screen and (max-width: 991px){
+        // @media screen and (max-width: 991px){
+        @include media-breakpoint-down(md){
             width: 100%;
             align-items: center;
         }
@@ -44,13 +46,15 @@
         }
 
         &--desktop {
-            @media screen and (min-width: 992px){
+            // @media screen and (min-width: 992px){
+            @include media-breakpoint-up(md){
                 display: flex !important;
             }
         }
 
         &--tablet {
-            @media screen and (max-width: 991px){
+            // @media screen and (max-width: 991px){
+            @include media-breakpoint-down(md){
                 display: flex !important;
             }
         }
@@ -60,7 +64,8 @@
         gap: pxToRem(12px);
         transition: none !important;
 
-        @media screen and (max-width: 991px){
+        // @media screen and (max-width: 991px){
+        @include media-breakpoint-down(md){
             width: 100%;
         }
     }
@@ -101,7 +106,8 @@
         border-radius: 50%;
         background: $red;
 
-        @media screen and (max-width: 991px){
+        // @media screen and (max-width: 991px){
+        @include media-breakpoint-down(md){
             position: static;
             width: pxToRem(16px);
             height: pxToRem(16px);

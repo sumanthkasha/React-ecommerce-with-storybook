@@ -11,7 +11,8 @@
     color: $gray-200;
     z-index: 99;
     margin-top: auto;
-    @media screen and (max-width: 991px){
+    // @media screen and (max-width: 991px){
+    @include media-breakpoint-down(md){
         font-size: $font-size-base * 0.625;
     }
 

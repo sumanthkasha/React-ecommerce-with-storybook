@@ -28,7 +28,8 @@
         align-items: center;
         padding: pxToRem(16px);
 
-        @media screen and (max-width: 768px) {
+        // @media screen and (max-width: 768px) {
+        @include media-breakpoint-down(sm){
             flex-direction: column;
             justify-content: center;
         }
@@ -102,7 +103,8 @@
                     right: pxToRem(4px);
                     margin: 0;
 
-                    @media screen and (max-width: 768px) {
+                    // @media screen and (max-width: 768px) {
+                    @include media-breakpoint-down(sm){
                         position: relative;
                     }
                 }
@@ -110,7 +112,8 @@
                     margin-top: pxToRem(16px);
                     margin-bottom: 0;
 
-                    @media screen and (max-width: 768px) {
+                    // @media screen and (max-width: 768px) {
+                    @include media-breakpoint-down(sm){
                         margin: pxToRem(8px) 0;
                     }
 
@@ -174,14 +177,16 @@
         text-align: center;
         cursor: pointer;
 
-        @media screen and (max-width: 768px) {
+        // @media screen and (max-width: 768px) {
+        @include media-breakpoint-down(sm){
             margin-left: 0;
             margin-top: pxToRem(16px);
             max-width: 100%;
         }
     }
 
-    @media screen and (max-width: 991px) {
+    // @media screen and (max-width: 991px) {
+    @include media-breakpoint-down(md){
         &__text {
             font-size: $font-size-s;
         }
